@@ -1,0 +1,6 @@
+{
+    "files.eol": "\n",
+    "debug.openDebug": "neverOpen",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+}

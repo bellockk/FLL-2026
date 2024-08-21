@@ -1,0 +1,14 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - cryptography
+  - pyserial
+  - sqlite
+  - typing_extensions
+  - pip
+  - pyusb
+  - pip:
+    - pybricks
+    - pybricksdev
+
