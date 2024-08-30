@@ -4,7 +4,6 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"lego-education.ev3-micropython",
 		"davidanson.vscode-markdownlint",
 		"ms-toolsai.jupyter",
 		"ms-python.python"

@@ -11,7 +11,7 @@ from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 
 hub = PrimeHub()
-wait(10000)
+# wait(10000)
 print('hi!')
 
 hub.speaker.beep()

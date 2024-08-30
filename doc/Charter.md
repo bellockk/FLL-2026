@@ -4,37 +4,16 @@
 
 ### Email Distribution Lists
 
-[Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;Joe_Walker_05@yahoo.com;john.shiffrin@gmail.com;boyd.fletcher@gmail.com)
+[Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;boyd.fletcher@gmail.com)
 
-[Parents, Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;Joe_Walker_05@yahoo.com;john.shiffrin@gmail.com;boyd.fletcher@gmail.com;brynagrant@gmail.com;mnoelcarrigan@gmail.com;Cedenokarla92@gmail.com;kimsyp1@aol.com;joanne.e.fletcher@gmail.com;cjf1960@yahoo.com;Ken.Skinner@gmail.com;2009hcollins@gmail.com;alenarosanna@gmail.com;Joe_Walker_05@yahoo.com;Msmelanie@hotmail.com;mandypasion04@gmail.com;cphand2003@yahoo.com;rebekahstew@yahoo.com;cphand2003@yahoo.com;rebekahstew@yahoo.com;rsafi52@yahoo.com;longearbasset@yahoo.com;sean.temples@comcast.net)
+[Parents, Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;boyd.fletcher@gmail.com)
 
 ### Members/Attendance
 
 | Last Name  | First Name  | Grade |    Parent Name     |                 Parent Email                  | Parent Phone | 9/11/2023 | 9/18/2023 |
 | :--------- | :---------- | :---: | :----------------- | :-------------------------------------------- | :----------- | :-------: | :-------: |
-| Barcelo    | Sophia      |   7   | Brendan Barcelo    |                                               |              |     X     |     X     |
-| Bellock    | Riley       |   7   | Ken Bellock        | <ken@bellock.net>                             | 717-333-6622 |     X     |     X     |
-| Cedeno     | Leandro     |   6   |                    | <Cedenokarla92@gmail.com>                     | 202-468-2353 |     X     |           |
-| Collins    | Vaughn      |   6   | Heather Collins    | <2009hcollins@gmail.com>                      | 913-306-9105 |     X     |           |
-| Dawson     | Haley       |   6   | Kimberly Dawson    | <kimsyp1@aol.com>                             | 443-745-5435 |     X     |           |
-| Fisher     | Eli         |   6   |                    | <cjf1960@yahoo.com>                           | 410-215-6913 |     X     |     X     |
-| Fletcher   | Zachary     |   6   |                    | <joanne.e.fletcher@gmail.com>                 | 410-854-5725 |     X     |     X     |
-| Forson     | Simeon      |   6   |                    | <brynagrant@gmail.com>                        | 410-215-1825 |     X     |           |
-| Hand       | Landon      |   6   |                    | <mnoelcarrigan@gmail.com;cphand2003@yahoo.com;rebekahstew@yahoo.com>                     | 443-670-4429 |     X     |           |
-| Laro       | Alyssa      |   6   |                    | <orquideagpe@hotmail.com>                     | 718-607-5922 |     X     |           |
-| Lonager    | Jackson     |   8   |                    |                   | 410-458-6816 |     X     |           |
-| Metzger    | Aidan       |   6   | Amie Irish         | <a.irish81@yahoo.com>                         | 443-883-1809 |     X     |     X     |
-| O'Halloran | Kellan      |   8   | Amanda Pasion      | <mandypasion04@gmail.com>                     |              |     X     |           |
-| Ruiz       | Lucas       |   6   | Alena & Erick Ruiz | <alenarosanna@gmail.com>                      | 240-505-6995 |     X     |     X     |
-| Sabila     | Jared       |   8   | Paul Sabila        |                                                |              |     X     |     X     |
-| Shiffrin   | Whittley    |   8   | John Shiffrin      | <john.shiffrin@gmail.com>                     | 443-995-1254 |     X     |     X     |
-| Skinner    | Julian      |   6   | Ken Skinner        | <Ken.Skinner@gmail.com>                       |              |     X     |     X     |
-| Sodiq      | Basit       |   6   |                    |                   |              |     X     |     X     |
-| Spielman   | Justin      |   8   | Jimmy              | <longearbasset@yahoo.com>                       |              |     X     |           |
-| Stinson    | Ethan       |   6   | Eric Lomax         |                     |              |     X     |           |
-| Strout     | Tan         |   6   | Dave Strout        |                        | 240-731-2727 |     X     |           |
-| Temples    | Samantha    |   7   | Sean Temples       | <lena.temples@comcast.net><sean.temples@comcast.net>                    | 443-569-1119 |     X     |     X     |
-| Walker     | Amaya       |   6   | Joe Walker         | <Joe_Walker_05@yahoo.com><smelanie@hotmail.com> 240-381-9835 |     X     |     X     |
+| Barcelo    | Sophia      |   8   | Brendan Barcelo    |                                               |              |     X     |     X     |
+| Bellock    | Riley       |   8   | Ken Bellock        | <ken@bellock.net>                             | 717-333-6622 |     X     |     X     |
 
 ### Coach Profiles
 
@@ -59,9 +38,9 @@ Before competition we will meet on the weekends at a coach or parents house to d
 
 ### Game Overview
 
-[Season Promotional Video](https://www.youtube.com/watch?v=QArg43rCMBA)
+[Season Promotional Video](https://youtu.be/c2f-Q5GGt2Q)
 
-[Robot Missions Overview](https://www.youtube.com/watch?v=zI_vz9YUw1g)
+[Robot Missions Overview](https://youtu.be/J5u-2q_K3O0)
 
 Game Rules
 
@@ -71,9 +50,9 @@ Students must do ALL of the work, coaches only provide guidance
 
 Competition consists of the robot challenge, a core values presentation, a conversation with judges about robot design, and an innovation project presentation
 
-Official Rulebook for Robot Competition: <https://firstinspiresst01.blob.core.windows.net/first-in-show-masterpiece/fll-challenge/Interactive%20Robot%20Game%20Rulebook/English/ENUS_Source/0001.html>
+Official Rulebook for Robot Competition: <https://firstinspires.blob.core.windows.net/fll/challenge/2024-25/interactive-rgr/index.html>
 
-Rubric for Presentations: <https://firstinspiresst01.blob.core.windows.net/first-in-show-masterpiece/fll-challenge/fll-challenge-masterpiece-rubrics-color.pdf>
+Rubric for Presentations: <https://firstinspires.blob.core.windows.net/fll/challenge/2024-25/fll-challenge-submerged-rubrics-color.pdf>
 
 ### Interesting Notes
 

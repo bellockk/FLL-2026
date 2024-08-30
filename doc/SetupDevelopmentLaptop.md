@@ -42,7 +42,7 @@
     Execute the following commands to install conda and create an environment for development.
 
     ```bash
-    sudo dnf -y install zsh vim
+    sudo dnf -y install zsh vim dfu-util
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
     bash miniconda.sh -b -p ~/.conda
     rm -fr miniconda.sh
@@ -50,10 +50,16 @@
     conda init bash
     conda config --system --set auto_activate_base false
     conda create -y -n fll
-    conda env update --file requirements.yaml
     conda activate fll
-    pip install pybricks
-    printf "conda activate fll\n" >> ~/.bashrc
+    conda env update --file requirements.yaml
+    ```
+
+1. Install `udev` Rules.
+
+    On Linux, `udev` rules are required to allow access to the hub through USB.  Execute the following to install the needed rules.
+
+    ```bash
+    pybricksdev udev | sudo tee /etc/udev/rules.d/99-pybricksdev.rules
     ```
 
 1. Install VSCode.
