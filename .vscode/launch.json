@@ -1,0 +1,104 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Batman",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src",
+            "args": [
+                "run",
+                "ble",
+                "--name", "batman",
+                "${workspaceFolder}/src/run.py"
+            ]
+        },
+        {
+            "name": "Run Benny",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "run",
+                "ble",
+                "--name", "benny",
+                "${workspaceFolder}/test.py"
+            ]
+        },
+        {
+            "name": "Run Current File",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "run",
+                "ble",
+                "${file}"
+            ]
+        },
+        {
+            "name": "Run Relative File",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "run",
+                "ssh",
+                "192.168.133.238",
+                "${relativeFile}"
+            ]
+        },
+        {
+            "name": "Restore Factory Firmware",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "flash",
+                "../pybricks-micropython/bricks/technichub/build/firmware.zip"
+            ]
+        },
+        {
+            "name": "Flash PyBricks Firmware",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "flash",
+                "../pybricks-micropython/bricks/cityhub/build/firmware.zip"
+            ]
+        },
+        {
+            "name": "Flash Move Hub",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "flash",
+                "../pybricks-micropython/bricks/movehub/build/firmware.zip"
+            ]
+        },
+        {
+            "name": "Flash SPIKE Prime Hub",
+            "type": "python",
+            "request": "launch",
+            "module": "pybricksdev",
+            "console": "integratedTerminal",
+            "args": [
+                "flash",
+                "../pybricks-micropython/bricks/primehub/build/firmware.zip"
+            ]
+        },
+    ]
+}

@@ -10,8 +10,8 @@
 ### Enter update mode (see video)
 
 1. Press and hold the Bluetooth button on the hub.
-1. Connect the USB cable.
-1. Wait for the Bluetooth light to start blinking pink-green-blue-off.
+1. Connect the USB cable.  (The light on the hub will come on solid purple.)
+1. Continue to hold the Blutooth button down until the light starts blinking pink-green-blue-off.
 1. Release the Bluetooth button.
 
 ## Backing Up Firmware

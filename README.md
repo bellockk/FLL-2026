@@ -4,6 +4,10 @@ Welcome to the 2023-2024 season of First Lego League at Old Mill Middle School S
 
 [Team Charter](doc/Charter.md)
 
+## PyBricks API Documentation
+
+<https://docs.pybricks.com/en/stable/index.html>
+
 ## Wiki
 
 [Connect to the Robot](doc/ConnectToTheRobot.md)
