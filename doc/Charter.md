@@ -2,18 +2,7 @@
 
 ## Communication
 
-### Email Distribution Lists
-
-[Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;boyd.fletcher@gmail.com)
-
-[Parents, Coaches and School Representative](mailto:MEHARTMAN@aacps.org;ken@bellock.net;brendanbarcelo@gmail.com;boyd.fletcher@gmail.com)
-
-### Members/Attendance
-
-| Last Name  | First Name  | Grade |    Parent Name     |                 Parent Email                  | Parent Phone | 9/11/2023 | 9/18/2023 |
-| :--------- | :---------- | :---: | :----------------- | :-------------------------------------------- | :----------- | :-------: | :-------: |
-| Barcelo    | Sophia      |   8   | Brendan Barcelo    |                                               |              |     X     |     X     |
-| Bellock    | Riley       |   8   | Ken Bellock        | <ken@bellock.net>                             | 717-333-6622 |     X     |     X     |
+E-Mail distribution list.  We compile an E-Mail distribution list from recruitement events, parent requests and the orientation meeting.  If you would like to be added to the distribution list please email the head coach at [ken@bellock.net](mailto:ken@bellock.net) and request to be added to the list.  If you are receiving emails and wish to be removed from the list, reply (not reply-all) to an email with "UNSUBSCRIBE" in the subject line of the email.
 
 ### Coach Profiles
 
@@ -25,6 +14,10 @@ This is a parent led club, but it would not be possible without Mrs. Hartman!  S
 
 My name is Ken Bellock, and I'll be the head coach for this season's FLL teams.  I have a B.S. in Mathematics and Physics from Penn State, and a M.S. in Geographic Information Systems from Johns Hopkins.  In the past I worked for the space program as a contractor designing ascent aborts scenarios for the Space Shuttle.  For my current job I lead a team of Embedded Software Engineers who automate tests on satellite systems before we deploy them to space.
 
+#### Coach Biographies
+
+TODO: Please fill in.
+
 #### Future Coaches
 
 Coaching Help is Needed!
@@ -35,6 +28,62 @@ We have several returning assistant coaches this year, but we need more!  If you
 Mondays 6-8pm except when the school is closed and on Halloween
 Usually early after the new year we have competition (I do not know dates yet) If we win a bracket, we move up and will have another day of competition.
 Before competition we will meet on the weekends at a coach or parents house to develop our robot game and presentation.  These are not required meetings, but are a lot of fun and very helpful for last minute preparations for competion.
+
+#### September
+
+|Mon|Tue|Wed|Thu|Fri|Sat|Sun|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|||||||1|
+|2|3|4|5|6|7|8|
+|9|10|11|12|13|14|15|
+|16|17|18|19[^1]|20|21|22|
+|23|24|25|26[^2]|27|28|29|
+|30|||||||
+
+#### October
+
+|Mon|Tue|Wed|Thu|Fri|Sat|Sun|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+||1|2|3|4[^2]|5|6|
+|7[^3]|8|9|10[^2]|11|12|13|
+|14[^3]|15|16|17[^2]|18|19|20|
+|21[^3]|22|23|24[^2]|25|26|27|
+|28[^3]|29|30|31[^2]||||
+
+#### November
+
+|Mon|Tue|Wed|Thu|Fri|Sat|Sun|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|||||1|2|3|
+|4[^3]|5|6|7[^2]|8|9|10|
+|11[^3]|12|13|14[^2]|15|16|17|
+|18[^3]|19|20|21[^2]|22|23|24|
+|25[^3]|26|27|28|29|30||
+
+#### December
+
+|Mon|Tue|Wed|Thu|Fri|Sat|Sun|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|||||||1|
+|2[^2]|3|4|5[^2]|6|7|8|
+|9[^2]|10|11|12[^2]|13|14|15|
+|16[^2]|17|18|19[^2]|20|21|22|
+|23[^2]|24|25|26[^2]|27|28|29|
+|30|31||||||
+
+#### January
+
+|Mon|Tue|Wed|Thu|Fri|Sat|Sun|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|||1|2|3|4|5|
+|6[^2]|7|8|9[^2]|10|11|12|
+|13[^2]|14|15|16[^2]|17|18|19|
+|20[^2]|21|22|23[^2]|24|25|26|
+|27|28|29|30|31|||
+
+[^1]: Orientation \(Stem Lab\)
+[^2]: In-Person Meeting \(Stem Lab\)
+[^3]: Virtual Meeting
 
 ### Game Overview
 
