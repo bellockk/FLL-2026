@@ -6,7 +6,8 @@
 	"recommendations": [
 		"davidanson.vscode-markdownlint",
 		"ms-toolsai.jupyter",
-		"ms-python.python"
+		"ms-python.python",
+		"james-yu.latex-workshop"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": []

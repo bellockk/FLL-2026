@@ -3,11 +3,14 @@ channels:
   - defaults
 dependencies:
   - cryptography
+  - flake8
+  - pip
+  - pycodestyle
+  - pydocstyle
   - pyserial
+  - pyusb
   - sqlite
   - typing_extensions
-  - pip
-  - pyusb
   - pip:
     - pybricks
     - pybricksdev

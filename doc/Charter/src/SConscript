@@ -1,0 +1,10 @@
+import pathlib
+Import('env')
+local_env = env.Clone()
+root = pathlib.Path(Dir('.').srcnode().abspath)
+
+# Build the Document
+pdf = local_env.PDF('document.tex')
+
+# Return the Document Node
+Return('pdf')
