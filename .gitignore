@@ -130,3 +130,5 @@ dmypy.json
 
 # SCons
 .sconsign.dblite
+
+*.docx
