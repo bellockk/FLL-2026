@@ -17,3 +17,5 @@ Welcome to the 2023-2024 season of First Lego League at Old Mill Middle School S
 [Setting up a Development Machine](doc/SetupDevelopmentLaptop.md)
 
 [Mission Model Assembly](doc/MissionModelAssembly.md)
+
+[Run Planning](doc/RunPlanning.md)
