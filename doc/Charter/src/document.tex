@@ -3,6 +3,9 @@
 % Fields
 \def\season{2024-2025}
 
+\usepackage{tikz}
+\usetikzlibrary{calendar,shapes,positioning}
+
 \usepackage[parfill]{parskip}
 
 \usepackage{titling}
@@ -27,14 +30,10 @@
 \date{}
 
 \usepackage{geometry}
-\geometry{margin=1in}
+\geometry{margin=0.75in}
 \usepackage{fancyhdr}
 
 \usepackage[hidelinks]{hyperref}
-
-\newcommand*{\SignatureAndDate}[1]{%
-    \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[2.5in]{\hrulefill} \hfill\makebox[1in]{\hrulefill}%
-}%
 
 \pagestyle{fancy}
 \usepackage{lastpage}
@@ -48,17 +47,15 @@
    \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
 }
 
-% Watermark
+% % Watermark
 \usepackage{eso-pic}
-\usepackage{tikz}
-\AddToShipoutPictureFG{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[gray,rotate=45,scale=14,opacity=0.2] at (current page.center){%
-        \textbf{DRAFT}};
-  \end{tikzpicture}}
+% \AddToShipoutPictureFG{%
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node[gray,rotate=45,scale=14,opacity=0.2] at (current page.center){%
+%         \textbf{DRAFT}};
+%   \end{tikzpicture}}
 
 % Calendar
-\usetikzlibrary{calendar,shapes,positioning}
 \makeatletter
 \tikzstyle{week list sunday}=[
 % Note that we cannot extend from week list,
@@ -295,6 +292,10 @@ If you have Legos, or Lego sets you no longer need or want, we are happy to take
 
 If you can make or design shirts and are willing to donate or assist in getting shirts for the teams, please let us know.
 
+\subsection{Innovation Project Supplies}
+
+As the innovation projects form, we will send out a note to parents requesting any assistance that may be needed.  In past years this has included requests for large pieces of cardboard and parents time to act as practice judges.
+
 \section{Questions}
 
 If you have any questions please let us know. You can email us or ask a coach
@@ -306,7 +307,13 @@ before or after meetings.
 
 By signing the below, you agree that you have reviewed all of the Charter contents and agree to all the rules and conditions described above for club participation.
 
-\par\noindent\makebox[2.5in][c]{\textbf{Parent/Guardian Signature}}      \hfill\makebox[2.5in][c]{\textbf{Student Name (Printed)}} \hfill\makebox[1in][c]{\textbf{Date}}%
+
+\newcommand*{\SignatureAndDate}[1]{%
+    \par\noindent\makebox[2in]{\hrulefill} \hfill\makebox[1.5in]{\hrulefill} \hfill\makebox[1.3in]{\hrulefill}\hfill\makebox[0.25in]{\hrulefill}\hfill\makebox[0.5in]{\hrulefill}%
+}%
+\par\noindent\makebox[2in][c]{\textbf{Parent/Guardian (Signature)}}      \hfill\makebox[1.5in][c]{\textbf{Student Name (Printed)}} \hfill\makebox[1.3in][c]{\textbf{Emergency Contact}} \hfill\makebox[0.25in][c]{\textbf{Grade}} \hfill\makebox[0.5in][c]{\textbf{Date}}%
+\SignatureAndDate{}
+\SignatureAndDate{}
 \SignatureAndDate{}
 \SignatureAndDate{}
 \SignatureAndDate{}
