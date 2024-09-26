@@ -10,6 +10,8 @@ Welcome to the 2023-2024 season of First Lego League at Old Mill Middle School S
 
 ## Wiki
 
+[Distribution List](doc/DistributionList.md)
+
 [Connect to the Robot](doc/ConnectToTheRobot.md)
 
 [Setting the Name of the Robot](doc/SettingRobotName.md)
