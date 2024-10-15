@@ -4,7 +4,6 @@ from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait, multitask, run_task, StopWatch
 
-
 LEFT_MOTOR_PORT = 'A'
 RIGHT_MOTOR_PORT = 'B'
 BACK_MOTOR_PORT = 'F'
@@ -19,8 +18,10 @@ STRAIGHT_ACCELERATION = 726
 TURN_RATE = 149
 TURN_ACCELERATION = 671
 
+
 def diff_angles(self, a, b):
     return ((b - a) + 180) % 360 - 180
+
 
 class Robot():
     """Robot controller."""
@@ -53,10 +54,11 @@ class Robot():
             STRAIGHT_ACCELERATION,
             TURN_RATE,
             TURN_ACCELERATION)
-
+        self.queue = []
 
     async def main(self):
-        await self._drive_base.straight(1000)
+        for callable, args, kwargs in self.queue:
+            await callable(*args, **kwargs)
         # await self._motors['back'].run_angle(90, 90)
 
     def run(self):
@@ -70,3 +72,6 @@ class Robot():
 
     def heading(self):
         return self._hub.imu.heading()
+
+    def drive(self, distance):
+        self.queue.append((self._drive_base.straight, (distance,), {}))
