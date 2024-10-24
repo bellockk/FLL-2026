@@ -3,20 +3,7 @@ from pybricks.pupdevices import Motor, ColorSensor
 from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait, multitask, run_task, StopWatch
-
-LEFT_MOTOR_PORT = 'A'
-RIGHT_MOTOR_PORT = 'B'
-BACK_MOTOR_PORT = 'F'
-FRONT_MOTOR_PORT = 'D'
-LEFT_COLOR_SENSOR_PORT = 'C'
-RIGHT_COLOR_SENSOR_PORT = 'E'
-GYRO_SENSOR_PORT = 'S4'
-WHEEL_DIAMETER = 55.5
-AXLE_TRACK = 124
-STRAIGHT_SPEED = 893
-STRAIGHT_ACCELERATION = 726
-TURN_RATE = 149
-TURN_ACCELERATION = 671
+from config import *
 
 
 def diff_angles(self, a, b):
@@ -75,3 +62,6 @@ class Robot():
 
     def drive(self, distance):
         self.queue.append((self._drive_base.straight, (distance,), {}))
+
+    def turn(self, angle):
+        self.queue.append((self._drive_base.turn, (angle,), {}))
