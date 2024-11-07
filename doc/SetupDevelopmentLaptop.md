@@ -20,6 +20,7 @@
     * Click "No Thanks" in the "Welcome to GNOME" dialog.
     * Open a terminal and execute `sudo dnf -y update --refresh` and enter "maker" when it prompts for a password.
     * When the update is complete restart the computer with the following command `sudo shutdown -r now`.
+    * Add the `fll` user to the dialout group.  This is needed to make usb connections.  `sudo usermod -aG dialout fll`.
 
 1. Enable auto login for Linux.
 
