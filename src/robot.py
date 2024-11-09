@@ -46,7 +46,6 @@ class Robot():
     async def main(self):
         for callable, args, kwargs in self.queue:
             await callable(*args, **kwargs)
-        # await self._motors['back'].run_angle(90, 90)
 
     def run(self):
         run_task(self.main())
@@ -65,3 +64,9 @@ class Robot():
 
     def turn(self, angle):
         self.queue.append((self._drive_base.turn, (angle,), {}))
+
+    def back_lift(self, angle):
+        self.queue.append((self._motors['back'].run_angle, (90, angle,), {}))
+
+    def front_lift(self, angle):
+        self.queue.append((self._motors['front'].run_angle, (90, angle,), {}))
