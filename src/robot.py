@@ -65,8 +65,8 @@ class Robot():
     def turn(self, angle):
         self.queue.append((self._drive_base.turn, (angle,), {}))
 
-    def back_lift(self, angle):
-        self.queue.append((self._motors['back'].run_angle, (90, angle,), {}))
+    def back_lift(self, angle, speed=120):
+        self.queue.append((self._motors['back'].run_angle, (speed, angle,), {}))
 
-    def front_lift(self, angle):
-        self.queue.append((self._motors['front'].run_angle, (90, angle,), {}))
+    def front_lift(self, angle, speed=120):
+        self.queue.append((self._motors['front'].run_angle, (speed, angle,), {}))
