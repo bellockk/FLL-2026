@@ -35,7 +35,7 @@
     Execute the following commands in a terminal.
 
     ```bash
-    sudo sh -c "dnf config-manager setopt google-chrome.enabled=1 && dnf install -y google-chrome-stabloe"
+    sudo sh -c "dnf config-manager setopt google-chrome.enabled=1 && dnf install -y google-chrome-stable"
     ```
 
 1. Install needed dependencies.
