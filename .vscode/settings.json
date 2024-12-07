@@ -2,6 +2,13 @@
     "files.eol": "\n",
     "debug.openDebug": "neverOpen",
     "files.trimTrailingWhitespace": true,
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.rulers": [79],
+    "terminal.integrated.profiles.windows": {
+        "Conda": {
+            "path": "C:\\Users\\fll\\.conda\\Scripts\\conda.exe",
+            "args": ["run", "-n", "fll", "--no-capture-output", "bash"]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Conda",
     "terminal.integrated.middleClickBehavior": "paste"
 }
