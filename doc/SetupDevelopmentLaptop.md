@@ -2,13 +2,53 @@
 
 1. Install Windows.
 
-    * Use the pink USB Stick.
+    * Connect the pink USB stick to the laptop.
+    ---
+    ***Note: It will be helpful to plug in a usb mouse for the following steps as the touchpad will not work until all windows updates have been installed.***
+
+    ---
+    * Press the power button, then hit the escape key repeatedly till the boot menu comes up.
+    ---
+    ***Note: On the first boot after the laptop has been off for a while, you may get an error that the CMOS checksum is invalid.  This seems to happen when the battery gets completely discharged.  You can hit any key to proceed past this screen.***
+
+    ---
+    * When the "Startup Menu", which will appear as a blue box with text in it, is visible, press "F9" to go to the "Boot Menu".
+    * Using the up/down arrow keys select "USB Hard Drive(UEFI)" and press "Enter".
+    * On the "Select language settings" page, click "Next".
+    * On the "Select keyboard settings" page, click "Next".
+    * Ensure "Install Windows 11" is selected, click the checkbox labeled "I agree everything will be deleted including files, apps, and settings" and click "Next".
     * When asked which partition to install on, delete all partitions, then create a new partition with half the size of the available disk, and select the new partition to intall Windows on.
-    * On the "Let's connect you to a network" step, choose "I don't have internet" in the bottom left corner.  We will connect after installation.  If you connect now it will force you to provide a Microsoft ID to finish installation of Windows.
-    * Use "FLL" for the username, "maker" for the password, and pick any 3 security questions and answer them all with "maker".
+    * On the page titled "Applicable notices and license terms" click "Accept".
+    * On the page titled "Select location to install Windows 11", click the "Load Driver" button.
+    * Click the "Browse" button.
+    * Open the "ESD-USB (C:)" folder, click to highlight the "HP-IntelRapidStorageTechnologyDriver", and click "OK".
+    * Click to highlight the line starting with "Intel RST VMD Managed Controller 09AB" and click "Install".
+    * Click on each partition of the new "Disk1" and click the "Delete Partition" button.  When you are done there should only be one entry in the table for "Disk 1" and it should be labeled "Unallocated Space".
+    * Click to highlight "Disk 1 Unallocated Space", and then click the "Create Partition" button.
+    * In the entry that appears, divide the number by 2 and place the new number in that field.  For example, the entry should default to 976760, delete that and enter 488380 into the entry field and click "Apply".
+    * Ensure the line "Disk 1 Partition 3" that has "Primary" listed in the "Type" column is selected, and click "Next".
+    * Click the "Install" button.
+    * After copying files, a window will popup titled "Is this the right country or region?". Click "Yes".
+    * On the next window titled "Is this the right keyboard layout or input method?", click "Yes".
+    * On the next window titled "Want to add a second keyboard layout?" click "Skip".
+    * On the screen labeled "Let's connect you to a network", do not select a network to connect to.  Instead, hit Shift + F10, click in the terminal that pops up, type "OOBE\BYPASSNRO" and hit the enter button.  The computer will restart.
+    * On the screen labeled "Is this the right country or region?" Click "Yes".
+    * On the next window titled "Is this the right keyboard layout or input method?", click "Yes".
+    * On the next window titled "Want to add a second keyboard layout?" click "Skip".
+    * On the screen labeled "Let's connect you to a network", do not select a network to connect to.  Click the blue hyperlink text that says "I don't have internet".
+    * On the screen labeled "Who's going to use this device?", enter "fll" and click "Next".
+    * On the screen labeled "Create a super memorable password", enter "maker" and click "Next".
+    * On the screen labeled "Confirm your password", enter "maker" and click "Next".
+    * On the next three screens, pick any security question, type "maker" in the entry field, and press "Next".
+    * On the screen labeled "Choose privacy settings for your device", click "Next" until the button text changes to "Accept" and then click "Accept".
 
 1. Update Windows.
 
+    * Connect to the internet.
+    ---
+    ***Note: You may need to set the date and time to be able to connect to a network.***
+
+    ---
     * Type `win`+`R`, type `control update` and press enter.
     * Click the "Check for updates" button.
     * If requested, reboot the machine to finish installation of updates.
@@ -25,7 +65,8 @@
     * Click "OK"
     * Enter the password "maker" twice and press "OK".
     * Type `win`+`I`, select "Accounts" and then select "Sign-in options".
-    * Under "Require sign-in" select "Never" from the drop down box under "If you've been away, when should WIndows require you to sign in again?"
+    * In the "Additional settings" group, under "If you've been away, when shoiuld Windows require you to sign in again?" select "Never" from the dropdown menu.
+    * Type "maker" into the password field and click "OK".
     * Close the Settings dialog.
 
 1. Configure Recyle Bin
@@ -50,11 +91,12 @@
 
     ```bash
     cd %HOME%
-    curl -k -o miniconda.exe https://repo.anaconda.com/miniconda/Miniconda3-py310_23.1.0-1-Windows-x86_64.exe
+    curl -k -o miniconda.exe https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
     start "" /wait miniconda.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%HOME%\.conda
     del /f miniconda.exe
-    .conda\condabin\conda activate
-    conda create -y -n fll python=3.11 pycodestyle pydocstyle flake8 mypy ipykernel
+    .conda\condabin\conda.bat activate
+    conda update -y -n base conda
+    conda create -y -n fll python git m2-base m2-bash
     exit
     ```
 

@@ -19,16 +19,17 @@
             ]
         },
         {
-            "name": "Run Benny",
+            "name": "Run Jaws",
             "type": "python",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src",
             "args": [
                 "run",
                 "ble",
-                "--name", "benny",
-                "${workspaceFolder}/test.py"
+                "--name", "jaws",
+                "${workspaceFolder}/src/run.py"
             ]
         },
         {
