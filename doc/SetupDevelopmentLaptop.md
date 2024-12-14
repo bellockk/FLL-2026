@@ -154,7 +154,7 @@
     * In the "About You" dialog, enter "FLL" in the "Full Name" entry field, and "fll" in the "Username" field.  Ensure the case is correct and click "Next".
     * In the "Set a Password" dialog, enter "maker" twice, and click "Next".
     * Click "Start Using Fedora Linux".
-    * Click "No Thanks" in the "Welcome to GNOME" dialog.
+    * Click "Skip" in the "Welcome to Fedora Linux" dialog.
     * Open a terminal and execute `sudo dnf -y update --refresh` and enter "maker" when it prompts for a password.
     * When the update is complete restart the computer with the following command `sudo shutdown -r now`.
     * Add the `fll` user to the dialout group.  This is needed to make usb connections.  `sudo usermod -aG dialout fll`.
