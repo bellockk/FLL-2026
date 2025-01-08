@@ -61,7 +61,10 @@ class Robot():
             TURN_RATE,
             TURN_ACCELERATION)
         self._drive_base.use_gyro(True)
+<<<<<<< Updated upstream
         self.trigger: bool = True
+=======
+>>>>>>> Stashed changes
         self.queue = []
 
     async def mainandlog(self):
@@ -110,6 +113,7 @@ class Robot():
     def turn(self, angle):
         self.queue.append((self._drive_base.turn, (angle,), {}))
 
+<<<<<<< Updated upstream
     def back_lift(self, angle, speed=120):
         self.queue.append(
             (self._motors['back'].run_angle, (speed, angle,), {}))
@@ -117,3 +121,10 @@ class Robot():
     def front_lift(self, angle, speed=120):
         self.queue.append(
             (self._motors['front'].run_angle, (speed, angle,), {}))
+=======
+    def fork_lift(self, angle, speed=120):
+        self.queue.append((self._motors['back'].run_angle, (speed, angle,), {}))
+
+    def plow_lift(self, angle, speed=120):
+        self.queue.append((self._motors['front'].run_angle, (speed, angle,), {}))
+>>>>>>> Stashed changes
