@@ -12,6 +12,7 @@ dependencies:
   - scons
   - sqlite
   - typing_extensions
+  - panel
   - pip
   - pip:
     - pybricks
