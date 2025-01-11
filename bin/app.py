@@ -4,6 +4,8 @@ import pandas as pd
 import json
 from pathlib import Path
 import asyncio
+import zmq.asyncio
+import zmq
 
 SCRIPT_PATH = Path(__file__).resolve().parent
 pn.extension('tabulator')
@@ -17,6 +19,22 @@ telemetry_tabulator = pn.widgets.Tabulator(
 
 run = pn.widgets.Button(name="Run", button_type="success")
 
+
+context = zmq.asyncio.Context()
+socket = context.socket(zmq.SUB)
+socket.connect("tcp://localhost:5556")
+socket.setsockopt(zmq.SUBSCRIBE, b'FLL')
+
+async def subscribe():
+    while True:
+        topic, message = await socket.recv_multipart()
+        try:
+            telemetry_tabulator.value = pd.DataFrame(
+                [{'Name': key,
+                  'Value': value} for key, value in json.loads(
+                      message).items()])
+        except json.decoder.JSONDecodeError:
+            print(message.decode('utf-8'))
 
 async def read_stream(stream):
     while True:
@@ -63,7 +81,8 @@ run.on_click(on_run)
 
 template = pn.template.FastListTemplate(
     title="FLL",
-    sidebar=[robot, run],
+    # sidebar=[robot, run],
     theme='dark')
 template.main.append(telemetry_tabulator)
+asyncio.ensure_future(subscribe())
 template.servable()

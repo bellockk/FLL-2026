@@ -6,35 +6,29 @@
     "configurations": [
         {
             "name": "Run Batman",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
-            "module": "pybricksdev",
             "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/src",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/publish_wrapper.py",
             "args": [
-                "run",
-                "ble",
-                "--name", "batman",
-                "${workspaceFolder}/src/run.py"
+                "batman"
             ]
         },
         {
             "name": "Run Jaws",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
-            "module": "pybricksdev",
             "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/src",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/publish_wrapper.py",
             "args": [
-                "run",
-                "ble",
-                "--name", "jaws",
-                "${workspaceFolder}/src/run.py"
+                "jaws"
             ]
         },
         {
             "name": "Run Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
@@ -46,7 +40,7 @@
         },
         {
             "name": "Run Relative File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
@@ -59,7 +53,7 @@
         },
         {
             "name": "Restore Factory Firmware",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
@@ -70,7 +64,7 @@
         },
         {
             "name": "Flash PyBricks Firmware",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
@@ -81,7 +75,7 @@
         },
         {
             "name": "Flash Move Hub",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",
@@ -92,7 +86,7 @@
         },
         {
             "name": "Flash SPIKE Prime Hub",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
             "console": "integratedTerminal",

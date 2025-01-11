@@ -61,10 +61,7 @@ class Robot():
             TURN_RATE,
             TURN_ACCELERATION)
         self._drive_base.use_gyro(True)
-<<<<<<< Updated upstream
         self.trigger: bool = True
-=======
->>>>>>> Stashed changes
         self.queue = []
 
     async def mainandlog(self):
@@ -80,19 +77,18 @@ class Robot():
     async def logit(self):
         while self.trigger:
             print(dict2json({
-                # 'Left Color Sensor': self._color_sensors[
-                #     'left'].reflection(),
-                # 'Right Color Sensor': self._color_sensors[
-                #     'right'].reflection(),
+                'Left Color Sensor': await self._color_sensors[
+                    'left'].reflection(),
+                'Right Color Sensor': await self._color_sensors[
+                    'right'].reflection(),
                 'Right Motor Angle': self._motors['right'].angle(),
-                # 'Right Motor Speed': self._motors['right'].speed(),
+                'Right Motor Speed': self._motors['right'].speed(),
                 'Left Motor Angle': self._motors['left'].angle(),
-                # 'Left Motor Speed': self._motors['left'].speed(),
+                'Left Motor Speed': self._motors['left'].speed(),
                 'Front Motor Angle': self._motors['front'].angle(),
-                # 'Front Motor Speed': self._motors['front'].speed(),
+                'Front Motor Speed': self._motors['front'].speed(),
                 'Back Motor Angle': self._motors['back'].angle(),
-                # 'Back Motor Speed': self._motors['back'].speed()}))
-                }))
+                'Back Motor Speed': self._motors['back'].speed()}))
             await wait(500)
 
     def run(self):
@@ -113,18 +109,8 @@ class Robot():
     def turn(self, angle):
         self.queue.append((self._drive_base.turn, (angle,), {}))
 
-<<<<<<< Updated upstream
-    def back_lift(self, angle, speed=120):
-        self.queue.append(
-            (self._motors['back'].run_angle, (speed, angle,), {}))
-
-    def front_lift(self, angle, speed=120):
-        self.queue.append(
-            (self._motors['front'].run_angle, (speed, angle,), {}))
-=======
     def fork_lift(self, angle, speed=120):
         self.queue.append((self._motors['back'].run_angle, (speed, angle,), {}))
 
     def plow_lift(self, angle, speed=120):
         self.queue.append((self._motors['front'].run_angle, (speed, angle,), {}))
->>>>>>> Stashed changes
