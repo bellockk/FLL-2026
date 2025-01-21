@@ -117,3 +117,24 @@ class Robot():
 
     def curve(self, radius, angle):
         self.queue.append((self._drive_base.curve, (radius, angle,), {}))
+
+    async def _drive_and_raise_fork_lift(self):
+        self._drive_base.settings(
+            .15 * STRAIGHT_SPEED,
+            STRAIGHT_ACCELERATION,
+            TURN_RATE,
+            TURN_ACCELERATION)
+        await multitask(
+            self._drive_base.straight(-200),
+            self._motors['back'].run_angle(70, -125))
+        # await multitask(
+        #     self._drive_base.straight(222),
+        #     self._motors['front'].run_angle(90, -150))
+        self._drive_base.settings(
+            STRAIGHT_SPEED,
+            STRAIGHT_ACCELERATION,
+            TURN_RATE,
+            TURN_ACCELERATION)
+
+    def drive_and_raise_fork_lift(self):
+        self.queue.append((self._drive_and_raise_fork_lift, (), {}))
