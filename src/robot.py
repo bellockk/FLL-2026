@@ -114,3 +114,6 @@ class Robot():
 
     def plow_lift(self, angle, speed=120):
         self.queue.append((self._motors['front'].run_angle, (speed, angle,), {}))
+
+    def curve(self, radius, angle):
+        self.queue.append((self._drive_base.curve, (radius, angle,), {}))
