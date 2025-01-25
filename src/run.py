@@ -3,150 +3,229 @@ from robot import Robot
 robot = Robot()
 
 def run1():
+    ## Inspection (20), Reef segments (15), precision tokens (50), good sports (4)
     robot.raise_all()
     robot.stow_all()
 
-def run2():
+    ## 0s 89pts
 
-    # Drive to Sea Creature and Catch the creature
+def run2():
+    # Drive to Sea Creature and Catch the creature (4s 20pts)
     robot.drive(140)
     robot.turn(-50)
     robot.drive(350)
-    robot.drive(-440)
 
-    #  Krill and Coral
-    robot.drive(200)
+    ## 4s 109pts
+
+    #  Krill and Coral (6s -5pts)
+    robot.drive(-240)
     robot.turn(50)
-
-    ## Un-Stow and lower plow
     robot.raise_all()
     robot.lower_plow_stow_fork_lift()
-
-    ## Push Krill and coral
     robot.drive(400)
-    robot.drive(-300)
 
-    # Yellow Boat
+    ## 10s 104pts
+
+    # Yellow Boat (18s 20pts)
+    robot.drive(-300)
     robot.turn(-137)
     robot.drive(110)
     robot.fork_lift(340, 2000)
-    robot.drive(-60)
+    robot.drive(-50)
     robot.fork_lift(-110)
     robot.turn(40)
     robot.fork_lift(-90, 2000)
     robot.turn(115)
+
+    ## 20s 124pts
+
+    # Sea Weed Sample (8s 10pts)
     robot.drive(350)
     robot.turn(-100)
     robot.drive(100)
-
-    # Sea Weed Sample
     robot.fork_lift(160,2000)
 
-    # Angler Fish
-    robot.curve(800, -19)
-    robot.curve(700, 25)
-    robot.drive(160)
+    ## 28s 134pts
 
-    # Remove krill and coral and drive off the mat
+    # Angler Fish (4s 30pts)
+    robot.curve(830, -20)
+    robot.curve(700, 25)
+    robot.drive(180)
+
+    ## 32s 164pts
+
+    # Remove krill and coral and drive off the mat (10s -5pts)
     robot.curve(400, -60)
     robot.curve(150, -20)
-    robot.curve(600, 80)
-    robot.plow_up()
-    robot.plow_stow()
-    robot.curve(500, 20)
-    robot.fork_lift_up()
-    robot.fork_lift_stow()
+    robot.drive(200)
+    robot.curve(450, 68)
+    robot.raise_all()
+    robot.stow_all()
+
+    # 42s 159pts
 
 def run3():
-    robot.drive(200)
-    robot.curve(700, -15)
-    robot.curve(700, 20)
-    #robot.curve(600, 15)
-
-
+    robot.fork_lift_up()
+    robot.plow_lift(100, 500)
 
 def run4():
+
+    # Flip up coral buds (s 20pts)
+    robot.stow_all()
+    robot.drive(350)
+    robot.curve(150, 90)
+    robot.drive(-75)
+
+    ## s 179pts
+
+    # Lift Scuba Dude (s 20pts)
+    robot.plow_lift(13, 500)
+
+    ## s 199pts
+
+    # Release the Shark (s 20pts)
+    robot.drive(15)
+    robot.curve(150, 45)
+    robot.drive(-160)
+    robot.fork_lift(340, 2000)
+    robot.fork_lift_up()
+
+    ## s 219pts
+
+    # Drop off Scuba Dude (s 20 pts)
+    robot.curve(190, 45)
+    robot.drive(-100)
+    robot.plow_lift(-18, 500)
+    robot.drive(80)
+
+    ## s 239pts
+
+    # Raise the Mast (s 30pts)
+    robot.turn(45)
+    robot.fork_lift_lower()
+    robot.curve(40, 45)
+    robot.plow_up()
+    robot.drive(-20)
+    robot.fork_lift(-160, 2000)
+    robot.fork_lift(160, 2000)
+
+    ## s 269pts
+
+    # Coral Reef (s 20pts)
+    robot.turn(-40)
+    robot.drive(-200)
+    robot.turn(40)
+    robot.drive(-200)
+    robot.fork_lift_up()
+    robot.turn(25)
+    robot.drive(160)
+    robot.plow_lower()
+    robot.plow_up()
+    robot.plow_stow()
+    robot.fork_lift_stow()
+
+    ## s 289pts
+
+    # Send over the submersible (s 30pts)
+    robot.drive(-160)
+    robot.turn(-18)
+    robot.drive(-190)
+    robot.plow_lift(-8, 500)
+    robot.turn(-95)
+
+    ## s 319pts
+
+    # Seabed Sample Collection (s 10pts)
+
+    robot.turn(137)
+    robot.fork_lift_up()
+    robot.plow_lift(200, 500)
+    robot.drive(100)
+    robot.turn(-60)
+
+    ## s 329pts
+
+    # Drive off mat
+    robot.drive(400)
+    robot.turn(-40)
+    robot.drive(740)
+    robot.turn(48)
+    robot.drive(100)
+    robot.raise_all()
+    robot.stow_all()
+
+def run5():
+    # Coral Reef Segments (s 15pts)
+    robot.wait(500)
+    robot.drive(-80, 50)
+
+    ## s 344pts
+
+    # Sample Dump (s 15pts)
+    robot.fork_lift(70)
+    robot.fork_lift(-70)
+
+    ## s 359pts
+
+    # Shark Dropoff (s 10pts)
+    robot.drive(100)
+    robot.turn(-26)
+    robot.wait(750)
+    robot.drive(-600)
+
+    ## s 369pts
+
+    # Drive to other starting area
+    robot.turn(26)
+    robot.drive(-1200)
+
+def run6():  # 21s 40pts
+    # Align with crab trap
+    robot.raise_all()
+    robot.stow_all()
     robot.drive(100)
     robot.turn(135)
     robot.curve(380, -45)
     robot.fork_lift(250, 2000)
+
+    # Drive Up to the crab trap
     robot.drive(-350)
+
+    # Bend the middle joint and fold trap in half
     robot.turn(25)
     robot.drive(-150)
+
+    # Lower the fork lift and get into position for the first flip
     robot.fork_lift(-45, 2000)
     robot.curve(300, -25)
     robot.fork_lift(70, 2000)
     robot.drive(-100)
+
+    # Flip up the traps
     robot.fork_lift(-200, 2000)
 
+    # Push over the traps
+    robot.fork_lift(150, 2000)
+    robot.drive(-160)
 
-# robot.raise_all()
-# robot.lower_all()
-# robot.wait(5000)
-# robot.fork_lift_up()
-# robot.plow_up()
-# robot.fork_lift_lower()
-# robot.plow_lower()
-# robot.raise_all()
-# robot.plow_lower()
-# robot.fork_lift_lower()
-# robot.stow_all()
+    # Re-align on right side
+    robot.fork_lift(-150, 2000)
+    robot.curve(300, -35)
+    robot.turn(35)
+    robot.fork_lift_lower()
+    robot.drive(-170)
+    robot.fork_lift(-200, 2000)
 
-'''
-# Drive to Sea Creature and Catch the creature
-robot.drive(140)
-robot.turn(-50)
-robot.drive(350)
-robot.drive(-440)
-#robot.wait(500)
+    ## s 409pts
 
+    # Creature Park (s 10pts)
+    robot.drive(100)
+    robot.turn(45)
+    robot.drive(-300)
+    robot.turn(45)
+    robot.drive(-100)
 
-#  Krill and Coral
-robot.drive(200)
-robot.turn(50)
-robot.fork_lift(120, 2000)
-robot.plow_lift(340, 2000)
-robot.fork_lift(-120, 2000)
-robot.drive(400)
-robot.drive(-300)
+    ## s 419pts
 
-# Yellow Boat
-robot.turn(-137)
-robot.drive(120)
-robot.fork_lift(340, 2000)
-robot.drive(-60)
-robot.fork_lift(-110)
-robot.turn(40)
-robot.fork_lift(-90, 2000)
-robot.turn(115)
-robot.drive(350)
-robot.turn(-100)
-robot.drive(100)
-robot.fork_lift(160,2000)
-robot.turn(-10)
-robot.drive(200)
-robot.drive(320)
-robot.turn(25)
-robot.drive(270)
-robot.turn(-25)
-
-
-'''
-
-#Grab krill and do drop the shark (Only tested on jaws)
-'''
-robot.drive(200)
-robot.turn(147)
-robot.drive(-185)
-robot.fork_lift(350,2000)
-robot.drive(520)
-robot.fork_lift(-350,2000)
-robot.turn(-30)
-robot.drive(-500)
-robot.turn(-30)
-robot.drive(-200)
-robot.turn(-40)
-robot.fork_lift(350, 500)
-'''
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4)
+robot.menu(run1, run2, run3, run4, run5, run6)
