@@ -79,7 +79,8 @@ def run4():
     ## s 179pts
 
     # Lift Scuba Dude (s 20pts)
-    robot.plow_lift(13, 500)
+    robot.plow_lift(23, 500)
+    robot.plow_lift(-10, 500)
 
     ## s 199pts
 
