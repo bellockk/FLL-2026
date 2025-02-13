@@ -1,6 +1,6 @@
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor
-from pybricks.parameters import Direction, Port, Button, Icon
+from pybricks.parameters import Direction, Port, Button, Icon, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait, multitask, run_task, hub_menu
 from config import (
@@ -46,8 +46,10 @@ class Robot():
                 getattr(Port, LEFT_MOTOR_PORT),
                 Direction.COUNTERCLOCKWISE),
             'right': Motor(getattr(Port, RIGHT_MOTOR_PORT)),
-            'front': Motor(getattr(Port, FRONT_MOTOR_PORT)),
-            'back': Motor(getattr(Port, BACK_MOTOR_PORT))}
+            'front': Motor(getattr(Port, FRONT_MOTOR_PORT),
+                           reset_angle=False),
+            'back': Motor(getattr(Port, BACK_MOTOR_PORT),
+                           reset_angle=False)}
 
         # Initialize Color Sensors
         self._color_sensors = {
@@ -67,6 +69,12 @@ class Robot():
         self._drive_base.use_gyro(True)
         self.trigger: bool = True
         self.queue = []
+        self.font_motor_lower = None
+        self.font_motor_upper = None
+        self.font_motor_up = None
+        self.back_motor_lower = None
+        self.back_motor_upper = None
+        self.back_motor_up = None
 
     async def mainandlog(self):
         await multitask(
@@ -113,33 +121,60 @@ class Robot():
 
     async def _raise_all(self, speed=500):
         await multitask(
-            self._motors['back'].run_target(speed, 215),
-            self._motors['front'].run_target(speed*.25, 215))
+            self._motors['back'].run_target(speed, self.back_motor_up),
+            self._motors['front'].run_target(speed*.25, self.front_motor_up))
     async def _stow_all(self, speed=500):
+        await self._raise_all(speed)
         await multitask(
-            self._motors['back'].run_target(speed*.4, 75),
-            self._motors['front'].run_target(speed, 80))
+            self._motors['back'].run_until_stalled(-200, then=Stop.HOLD),
+            self._motors['front'].run_until_stalled(-200, then=Stop.HOLD))
     async def _lower_all(self, speed=500):
         await multitask(
-            self._motors['back'].run_target(speed, 360),
-            self._motors['front'].run_target(speed, 360))
+            self._motors['back'].run_target(speed, self.back_motor_lower),
+            self._motors['front'].run_target(speed, self.front_motor_lower))
     async def _lower_plow_stow_fork_lift(self, speed=500):
+        await self._raise_all()
         await multitask(
-            self._motors['back'].run_target(speed, 75),
-            self._motors['front'].run_target(speed, 360))
+            self._motors['back'].run_target(speed, self.back_motor_upper),
+            self._motors['front'].run_target(speed, self.front_motor_lower))
     async def _lower_fork_lift_stow_plow(self, speed=500):
+        await self._raise_all()
         await multitask(
-            self._motors['back'].run_target(speed, 360),
-            self._motors['front'].run_target(speed, 80))
+            self._motors['back'].run_target(speed, self.back_motor_lower),
+            self._motors['front'].run_target(speed, self.front_motor_upper))
+
+    async def _initialize(self):
+        await multitask(
+            self._motors['back'].run_until_stalled(200, then=Stop.HOLD),
+            self._motors['front'].run_until_stalled(200, then=Stop.HOLD))
+        backoff = 35
+        await self._motors['back'].run_until_stalled(200, then=Stop.HOLD)
+        self.back_motor_lower = self._motors['back'].angle() - backoff
+        await self._motors['back'].run_until_stalled(-200, then=Stop.HOLD)
+        self.back_motor_upper = self._motors['back'].angle() + backoff
+        self.back_motor_up = self.back_motor_upper + 170
+        await self._motors['back'].run_target(200, self.back_motor_up)
+        await self._motors['front'].run_until_stalled(200, then=Stop.HOLD)
+        self.front_motor_lower = self._motors['front'].angle() - backoff
+        await self._motors['front'].run_until_stalled(-200, then=Stop.HOLD)
+        self.front_motor_upper = self._motors['front'].angle() + backoff
+        self.front_motor_up = self.front_motor_upper + 160
+        await self._stow_all()
+
+    def initialize(self):
+        self.queue.append((self._initialize, (), {}))
 
     def fork_lift(self, angle, speed=120):
-        self.queue.append((self._motors['back'].run_angle, (speed, angle,), {}))
+        angle_max = max(self.back_motor_upper, self.back_motor_lower)
+        angle_min = min(self.back_motor_upper, self.back_motor_lower)
+        target = int((angle_max - angle_min) * angle * .01) - angle_max
+        self.queue.append((self._motors['back'].run_angle, (speed, target,), {}))
     def fork_lift_stow(self, speed=500):
-        self.queue.append((self._motors['back'].run_target, (speed, 75), {}))
+        self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_upper), {}))
     def fork_lift_up(self, speed=500):
-        self.queue.append((self._motors['back'].run_target, (speed, 215), {}))
+        self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_up), {}))
     def fork_lift_lower(self, speed=500):
-        self.queue.append((self._motors['back'].run_target, (speed, 360), {}))
+        self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_lower), {}))
 
     def raise_all(self, speed=500):
         self.queue.append((self._raise_all, (speed,), {}))
@@ -153,13 +188,16 @@ class Robot():
         self.queue.append((self._lower_plow_stow_fork_lift, (speed,), {}))
 
     def plow_lift(self, angle, speed=120):
-        self.queue.append((self._motors['front'].run_angle, (speed, angle,), {}))
+        angle_max = max(self.front_motor_upper, self.front_motor_lower)
+        angle_min = min(self.front_motor_upper, self.front_motor_lower)
+        target = int((angle_max - angle_min) * angle * .01) - angle_max
+        self.queue.append((self._motors['front'].run_angle, (speed, target,), {}))
     def plow_stow(self, speed=500):
-        self.queue.append((self._motors['front'].run_target, (speed, 80), {}))
+        self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_upper), {}))
     def plow_up(self, speed=500):
-        self.queue.append((self._motors['front'].run_target, (speed, 215), {}))
+        self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_up), {}))
     def plow_lower(self, speed=500):
-        self.queue.append((self._motors['front'].run_target, (speed, 360), {}))
+        self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_lower), {}))
 
     def curve(self, radius, angle):
         self.queue.append((self._drive_base.curve, (radius, angle,), {}))

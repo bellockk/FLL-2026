@@ -3,13 +3,54 @@ from robot import Robot
 robot = Robot()
 
 def run1():
-    ## Inspection (20), Reef segments (15), precision tokens (50), good sports (4)
-    robot.raise_all()
-    robot.stow_all()
+    robot.initialize()
 
     ## 0s 89pts
-
 def run2():
+    robot.lower_plow_stow_fork_lift()
+    robot.drive(400)
+    # robot.lower_fork_lift_stow_plow()
+    # robot.drive(-400)
+
+def run3():
+    robot.raise_all()
+    robot.fork_lift(100)
+    robot.plow_lift(100)
+    robot.fork_lift(50)
+    robot.plow_lift(50)
+def run4():
+    robot.fork_lift(0)
+def run5():
+    robot.lower_fork_lift_stow_plow()
+def run6():
+    robot.lower_plow_stow_fork_lift()
+def run7():
+    pass
+
+def runA():
+    # Align with crab trap
+    robot.raise_all()
+    robot.stow_all()
+    robot.drive(100)
+    robot.turn(135)
+    robot.curve(380, -45)
+    robot.fork_lift(250, 2000)
+
+    # Drive Up to the crab trap
+    robot.drive(-350)
+
+    # Bend the middle joint and fold trap in half
+    robot.turn(25)
+    robot.drive(-150)
+
+    # Lower the fork lift and get into position for the first flip
+    robot.fork_lift(-45, 2000)
+    robot.curve(300, -25)
+    robot.fork_lift(70, 2000)
+    robot.drive(-100)
+
+
+def runA():
     # Drive to Sea Creature and Catch the creature (4s 20pts)
     robot.drive(140)
     robot.turn(-50)
@@ -64,11 +105,11 @@ def run2():
 
     # 42s 159pts
 
-def run3():
+def runA():
     robot.fork_lift_up()
     robot.plow_lift(100, 500)
 
-def run4():
+def runA():
 
     # Flip up coral buds (s 20pts)
     robot.stow_all()
@@ -155,7 +196,7 @@ def run4():
     robot.raise_all()
     robot.stow_all()
 
-def run5():
+def runA():
     # Coral Reef Segments (s 15pts)
     robot.wait(500)
     robot.drive(-80, 50)
@@ -180,7 +221,7 @@ def run5():
     robot.turn(26)
     robot.drive(-1200)
 
-def run6():  # 21s 40pts
+def runA():  # 21s 40pts
     # Align with crab trap
     robot.raise_all()
     robot.stow_all()
@@ -227,6 +268,8 @@ def run6():  # 21s 40pts
     robot.drive(-100)
 
     ## s 419pts
+def runA():  # 21s 40pts
+    robot.fork_lift(-270, 9000)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6)
+robot.menu(run1, run2, run3, run4, run5, run6, run7)
