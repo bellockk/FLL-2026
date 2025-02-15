@@ -165,10 +165,12 @@ class Robot():
         self.queue.append((self._initialize, (), {}))
 
     def fork_lift(self, angle, speed=120):
-        angle_max = max(self.back_motor_upper, self.back_motor_lower)
-        angle_min = min(self.back_motor_upper, self.back_motor_lower)
-        target = int((angle_max - angle_min) * angle * .01) - angle_max
-        self.queue.append((self._motors['back'].run_angle, (speed, target,), {}))
+        print(f'\ntarget_angle: {angle}')
+        print(f'back_motor_upper: {self.back_motor_upper}')
+        print(f'back_motor_lower: {self.back_motor_lower}')
+        target = int(self.back_motor_lower + (self.back_motor_upper - self.back_motor_lower) * angle * .01)
+        print(f'target: {target}')
+        self.queue.append((self._motors['back'].run_target, (speed, target,), {}))
     def fork_lift_stow(self, speed=500):
         self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_upper), {}))
     def fork_lift_up(self, speed=500):
@@ -187,11 +189,13 @@ class Robot():
     def lower_plow_stow_fork_lift(self, speed=500):
         self.queue.append((self._lower_plow_stow_fork_lift, (speed,), {}))
 
-    def plow_lift(self, angle, speed=120):
-        angle_max = max(self.front_motor_upper, self.front_motor_lower)
-        angle_min = min(self.front_motor_upper, self.front_motor_lower)
-        target = int((angle_max - angle_min) * angle * .01) - angle_max
-        self.queue.append((self._motors['front'].run_angle, (speed, target,), {}))
+    def plow(self, angle, speed=120):
+        print(f'\ntarget_angle: {angle}')
+        print(f'front_motor_upper: {self.front_motor_upper}')
+        print(f'front_motor_lower: {self.front_motor_lower}')
+        target = int(self.front_motor_lower + (self.front_motor_upper - self.front_motor_lower) * angle * .01)
+        self.queue.append((self._motors['front'].run_target, (speed, target,), {}))
+        print(f'target: {target}')
     def plow_stow(self, speed=500):
         self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_upper), {}))
     def plow_up(self, speed=500):
@@ -271,7 +275,7 @@ class Robot():
         while True:
             selected = None
             for motor in self._motors.values():
-                motor.stop()
+                motor.hold()
             if len(choices) > 1:
                 selected = hub_menu(*choices)
             elif len(choices) == 1:
