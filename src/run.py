@@ -6,11 +6,59 @@ def run1():
     robot.initialize()
 
     ## 0s 89pts
+
 def run2():
+    # robot.lower_plow_stow_fork_lift()
+    # robot.drive(400)
+    robot.lower_fork_lift_stow_plow()
+    robot.fork_lift(15)
+    robot.drive(-100)
+    robot.curve(-450, 25)  # -25
+    robot.turn(35)         #  10
+    robot.drive(-100)
+    robot.drive(80)
+    robot.turn(-10)        #   0
+    robot.fork_lift(0)
+    robot.drive(-150)
+    robot.drive(10)
+    robot.fork_lift_stow(2000)
+
+    robot.turn(75)         #  75
+    robot.drive(-180)
+    robot.drive(30)
+    robot.turn(-120)       # -45
     robot.lower_plow_stow_fork_lift()
-    robot.drive(400)
-    # robot.lower_fork_lift_stow_plow()
-    # robot.drive(-400)
+    robot.drive(300)
+    robot.turn(-45)       # -90
+    robot.curve(300, 30)  # -120
+    robot.curve(100, -30) # -90
+    robot.drive(80)
+    robot.turn(-90 - 45)  # -225
+    robot.curve(200, 45)  # -180
+    robot.drive(200)
+    robot.lower_fork_lift_stow_plow()
+    robot.curve(-200, 40) # -140
+    robot.curve(-125, -85)# -225
+    robot.plow(25)
+    robot.fork_lift_stow()
+    robot.drive(170)
+    robot.plow(20)
+    robot.curve(-200, 45) #  -180
+    robot.fork_lift_lower()
+    robot.curve(125, -25)  #  -155
+    robot.plow_lower()
+    robot.drive(800)
+
+    # robot.fork_lift_stow()
+    #robot.curve(100, -120) # 0
+    # robot.drive(200)
+
+
+
+
+    # robot.drive(-300)
+    # robot.turn(-45)
+    # robot.drive(-50)
 
 def run3():
     robot.raise_all()
@@ -272,4 +320,9 @@ def runA():  # 21s 40pts
     robot.fork_lift(-270, 9000)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6, run7)
+run1()
+robot.run()
+run2()
+robot.run()
+# robot.menu(run1, run2)
+# robot.menu(run1, run2, run3, run4, run5, run6, run7)

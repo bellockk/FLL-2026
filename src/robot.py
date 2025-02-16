@@ -165,11 +165,8 @@ class Robot():
         self.queue.append((self._initialize, (), {}))
 
     def fork_lift(self, angle, speed=120):
-        print(f'\ntarget_angle: {angle}')
-        print(f'back_motor_upper: {self.back_motor_upper}')
-        print(f'back_motor_lower: {self.back_motor_lower}')
+        print(f'angle: {angle}')
         target = int(self.back_motor_lower + (self.back_motor_upper - self.back_motor_lower) * angle * .01)
-        print(f'target: {target}')
         self.queue.append((self._motors['back'].run_target, (speed, target,), {}))
     def fork_lift_stow(self, speed=500):
         self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_upper), {}))
@@ -190,12 +187,8 @@ class Robot():
         self.queue.append((self._lower_plow_stow_fork_lift, (speed,), {}))
 
     def plow(self, angle, speed=120):
-        print(f'\ntarget_angle: {angle}')
-        print(f'front_motor_upper: {self.front_motor_upper}')
-        print(f'front_motor_lower: {self.front_motor_lower}')
         target = int(self.front_motor_lower + (self.front_motor_upper - self.front_motor_lower) * angle * .01)
         self.queue.append((self._motors['front'].run_target, (speed, target,), {}))
-        print(f'target: {target}')
     def plow_stow(self, speed=500):
         self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_upper), {}))
     def plow_up(self, speed=500):
