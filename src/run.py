@@ -74,7 +74,9 @@ def run2():
     #  Angler Fish (s 30pts)
     robot.curve(125, -25)  #  -155
     robot.plow_lower()
-    robot.drive(800)
+    robot.curve(125, 25)  #  -180
+    robot.curve(1000, -10)
+    # robot.drive(800)
 
     # s 234pts
 
@@ -95,6 +97,7 @@ def run2():
     # s 284pts
 
 def run3():
+    pass
 
     # Hang Coral Tree (s 20pts)
 
@@ -125,6 +128,7 @@ def run3():
     # s 454pts
 
 def run4():
+    pass
 
     # Drop Off Shark (s 10pts)
 
@@ -135,7 +139,7 @@ def run4():
     # s 484
 
 def run5():
-
+    pass
     # Push Coral Reef and fill Boat (35pts) 15pts coral + 20pts samples
 
     # s 519
@@ -145,6 +149,7 @@ def run5():
     # s 539
 
 def run6():
+    pass
 
     # Dump Krill (s 50pts)
 
@@ -159,25 +164,6 @@ def run6():
     # s 609s
 
 
-def run(5):
-
-    #
-
-
-def run3_old():
-    robot.raise_all()
-    robot.fork_lift(100)
-    robot.plow_lift(100)
-    robot.fork_lift(50)
-    robot.plow_lift(50)
-def run4():
-    robot.fork_lift(0)
-def run5():
-    robot.lower_fork_lift_stow_plow()
-def run6():
-    robot.lower_plow_stow_fork_lift()
-def run7():
-    pass
 
 def runA():
     # Align with crab trap
