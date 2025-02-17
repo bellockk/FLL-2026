@@ -3,28 +3,39 @@ from robot import Robot
 robot = Robot()
 
 def run1():
+    # Pre-Run Initialization/Calibration
     robot.initialize()
 
-    ## 0s 89pts
+    ## 0s 89pts  0deg is West
 
 def run2():
-    # robot.lower_plow_stow_fork_lift()
-    # robot.drive(400)
+    # Drive Up to the Artificial Habitat
     robot.lower_fork_lift_stow_plow()
     robot.fork_lift(15)
     robot.drive(-100)
-    robot.curve(-450, 25)  # -25
-    robot.turn(35)         #  10
+    robot.curve(-450, 25)  # -25deg
+
+    # Fold Artificial Habitat
+    robot.turn(35)         #  10deg
     robot.drive(-100)
     robot.drive(80)
-    robot.turn(-10)        #   0
+    robot.turn(-10)        #   0deg
+
+    # Flip Artificial Habitat (s 40pts)
     robot.fork_lift(0)
     robot.drive(-150)
     robot.drive(10)
     robot.fork_lift_stow(2000)
 
+    ## s 129pts
+
+    # Release the Unknown Creature (s 20pts)
     robot.turn(75)         #  75
     robot.drive(-180)
+
+    ## s 149pts
+
+    # Collect Krill and Coral Segment (s -5pts)
     robot.drive(30)
     robot.turn(-120)       # -45
     robot.lower_plow_stow_fork_lift()
@@ -36,31 +47,124 @@ def run2():
     robot.turn(-90 - 45)  # -225
     robot.curve(200, 45)  # -180
     robot.drive(200)
+
+    # s 144pts
+
+    # Change Shipping Lanes (s 20pts)
     robot.lower_fork_lift_stow_plow()
     robot.curve(-200, 40) # -140
     robot.curve(-125, -85)# -225
     robot.plow(25)
     robot.fork_lift_stow()
+
+    # s 164pts
+
+    # Reveal East Whale (s 20pts)
     robot.drive(170)
     robot.plow(20)
     robot.curve(-200, 45) #  -180
+
+    # s 184pts
+
+    # Collect Plankton Sample (s 10pts)
     robot.fork_lift_lower()
+
+    # s 194pts
+
+    #  Angler Fish (s 30pts)
     robot.curve(125, -25)  #  -155
     robot.plow_lower()
     robot.drive(800)
 
-    # robot.fork_lift_stow()
-    #robot.curve(100, -120) # 0
-    # robot.drive(200)
+    # s 234pts
 
+    # Send over the Submersible (s 30pts)
 
+    # s 264pts
 
+    # Collect Seabed Sample (s 10pts)
 
-    # robot.drive(-300)
-    # robot.turn(-45)
-    # robot.drive(-50)
+    # s 274pts
+
+    # Flip up Coral Reef (s 20pts)
+
+    # s 294pts
+
+    # Drive Off Board with Krill, samples, and Coral Tree (s -10pts)
+
+    # s 284pts
 
 def run3():
+
+    # Hang Coral Tree (s 20pts)
+
+    # s 324pts
+
+    # Flip Coral Buds up (s 20pts)
+
+    # s 344pts
+
+    # Grab Scuba Dude (s 20pts)
+
+    # s 364pts
+
+    # Shark (s 20pts)
+
+    # s 384pts
+
+    # Raise the Mast (s 30pts)
+
+    # s 414pts
+
+    # Kraken's Treasure (s 20pts)
+
+    # s 434pts
+
+    # Drop Off Scuba Dude (s 20 pts)
+
+    # s 454pts
+
+def run4():
+
+    # Drop Off Shark (s 10pts)
+
+    # s 464pts
+
+    # Get Trident Piece and Krill (20pts)
+
+    # s 484
+
+def run5():
+
+    # Push Coral Reef and fill Boat (35pts) 15pts coral + 20pts samples
+
+    # s 519
+
+    # Push Boat to port latch (s 20pts)
+
+    # s 539
+
+def run6():
+
+    # Dump Krill (s 50pts)
+
+    # s 589 pts
+
+    # Reveal West Whale (s 10pts)
+
+    # s 599pts
+
+    # Park on Unknown Creature in cold seep (10pts)
+
+    # s 609s
+
+
+def run(5):
+
+    #
+
+
+def run3_old():
     robot.raise_all()
     robot.fork_lift(100)
     robot.plow_lift(100)
