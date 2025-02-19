@@ -24,20 +24,20 @@ def run2():
     # Flip Artificial Habitat (s 40pts)
     robot.fork_lift(0)
     robot.drive(-150)
-    robot.drive(10)
+    robot.drive(20)
     robot.fork_lift_stow(2000)
 
     ## s 129pts
 
     # Release the Unknown Creature (s 20pts)
-    robot.turn(75)         #  75
+    robot.turn(72)         #  72
     robot.drive(-180)
 
     ## s 149pts
 
     # Collect Krill and Coral Segment (s -5pts)
     robot.drive(30)
-    robot.turn(-120)       # -45
+    robot.turn(-117)       # -45
     robot.lower_plow_stow_fork_lift()
     robot.drive(300)
     robot.turn(-45)       # -90
@@ -45,24 +45,28 @@ def run2():
     robot.curve(100, -30) # -90
     robot.drive(80)
     robot.turn(-90 - 45)  # -225
-    robot.curve(200, 45)  # -180
+    robot.curve(200, 45)  # -185
     robot.drive(200)
 
     # s 144pts
 
     # Change Shipping Lanes (s 20pts)
     robot.lower_fork_lift_stow_plow()
-    robot.curve(-200, 40) # -140
-    robot.curve(-125, -85)# -225
+    robot.curve(-400, 45) # -230
+    robot.turn(90)        # -140
+    robot.drive(-50)
     robot.plow(25)
     robot.fork_lift_stow()
 
     # s 164pts
 
     # Reveal East Whale (s 20pts)
+    robot.turn(-10)      # -150
     robot.drive(170)
-    robot.plow(20)
-    robot.curve(-200, 45) #  -180
+    robot.plow(20, 300)
+    robot.curve(-300, 30) #  -180
+    robot.drive(-40)
+    robot.drive(30)
 
     # s 184pts
 
@@ -72,22 +76,23 @@ def run2():
     # s 194pts
 
     #  Angler Fish (s 30pts)
-    robot.curve(125, -25)  #  -155
+    robot.plow(40, 300)
+    robot.curve(100, -45)  #  -150
+    robot.curve(200, 45)  #  -180
     robot.plow_lower()
-    robot.curve(125, 25)  #  -180
     robot.drive(200)
-    robot.curve(850, -20)  #  -155
-    robot.curve(150, 25)  #  -155
-    robot.curve(300, 20)  #  -155
-    robot.curve(300, -25)  #  -155
-    robot.drive(200)
-    robot.drive(-500)
-    robot.plow(30)
-    robot.curve(200, 52)  #  -155
-    robot.curve(150, -52)  #  -155
-    robot.drive(200)
-    robot.plow_lower()
-    robot.plow(30)
+#     robot.curve(850, -20)  #  -155
+#     robot.curve(150, 25)  #  -155
+#     robot.curve(300, 20)  #  -155
+#     robot.curve(300, -25)  #  -155
+#     robot.drive(200)
+#     robot.drive(-500)
+#     robot.plow(30)
+#     robot.curve(200, 52)  #  -155
+#     robot.curve(150, -52)  #  -155
+#     robot.drive(200)
+#     robot.plow_lower()
+#     robot.plow(30)
 
     # s 234pts
 
