@@ -75,8 +75,19 @@ def run2():
     robot.curve(125, -25)  #  -155
     robot.plow_lower()
     robot.curve(125, 25)  #  -180
-    robot.curve(1000, -10)
-    # robot.drive(800)
+    robot.drive(200)
+    robot.curve(850, -20)  #  -155
+    robot.curve(150, 25)  #  -155
+    robot.curve(300, 20)  #  -155
+    robot.curve(300, -25)  #  -155
+    robot.drive(200)
+    robot.drive(-500)
+    robot.plow(30)
+    robot.curve(200, 52)  #  -155
+    robot.curve(150, -52)  #  -155
+    robot.drive(200)
+    robot.plow_lower()
+    robot.plow(30)
 
     # s 234pts
 
