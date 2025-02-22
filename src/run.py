@@ -180,12 +180,12 @@ def run5():
 def run6():
     # Dump the goodies
     # Coral Reef Segments (s 15pts)
-    robot.drive(-150, 100)
+    robot.drive(-100, 100)
 
     # Sample Dump (s 15pts)
     robot.fork_lift(60)
     robot.fork_lift_stow()
-    robot.drive(200, 50)
+    robot.drive(100, 100)
     robot.turn(-30)
 
 def run7():
@@ -213,8 +213,8 @@ def run8():
 
     # Park on Unknown Creature in cold seep (10pts)
     robot.turn(20)
+    robot.fork_lift(15)
     robot.drive(-300)
-    robot.fork_lift(10)
 
     # s 609s
 
