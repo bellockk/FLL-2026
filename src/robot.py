@@ -159,7 +159,7 @@ class Robot():
         await self._motors['front'].run_until_stalled(-200, then=Stop.HOLD)
         self.front_motor_upper = self._motors['front'].angle() + backoff
         self.front_motor_up = self.front_motor_upper + 160
-        await self._stow_all()
+        await self._raise_all()
 
     def initialize(self):
         self.queue.append((self._initialize, (), {}))
