@@ -165,7 +165,6 @@ class Robot():
         self.queue.append((self._initialize, (), {}))
 
     def fork_lift(self, angle, speed=120):
-        print(f'angle: {angle}')
         target = int(self.back_motor_lower + (self.back_motor_upper - self.back_motor_lower) * angle * .01)
         self.queue.append((self._motors['back'].run_target, (speed, target,), {}))
     def fork_lift_stow(self, speed=500):
