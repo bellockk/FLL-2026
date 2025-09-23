@@ -1,5 +1,11 @@
 # [Setting Up a Development Laptop for FLL](../README.md)
 
+The following guide presents a method to create a team laptop that supports both coding with scratch or python using the Lega Education software suites, and PyBricks on either Linux or Windows. Many users will be familiar with the Windows environment, but if only cheap donated laptops/computers are available to the team, the Linux install can turn a very old laptop into a very capable development machine for a team.
+
+1. Create Installation Media
+    * Follow [this guide to create a Windows 11 Install USB stick](https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d) - referred to as the "pink USB stick" in the following sections.
+    * Follow [this guide to create a Fedora install USB stick](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/) - referred to as the "blue USB stick" in the following sections.
+    
 1. Install Windows.
 
     * Connect the pink USB stick to the laptop.

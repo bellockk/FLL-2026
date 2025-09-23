@@ -1,6 +1,6 @@
-# FLL-2024
+# FLL-2026
 
-Welcome to the 2023-2024 season of First Lego League at Old Mill Middle School South!!
+Welcome to the 2025-2026 season of First Lego League at Old Mill Middle School South!!
 
 [Team Charter](doc/Charter.md)
 

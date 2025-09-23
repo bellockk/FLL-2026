@@ -18,11 +18,33 @@ from config import (
     TURN_ACCELERATION)
 
 
-def diff_angles(a: int, b: int):
+def diff_angles(a: int, b: int) -> int:
+    """
+    Return the angle between two given angles.
+
+    Args:
+      a: The first angle.
+      b: The seconda angle.
+
+    Returns:
+      The angle between the two given angles.
+    """
     return ((b - a) + 180) % 360 - 180
 
 
 def dict2json(dictionary: dict):
+    """
+    Convert a python dictionary to JSON.
+
+    Note: This function only supports the very simple case of a flat
+      dictionary.  It does not support recursion into nested dictionaries.
+
+    Args:
+      dictionary: The dictionary to convert to JSON.
+
+    Returns:
+      A JSON representation of the input dictionary.
+    """
     return '{' + ', '.join([
         '"' + key + '": ' + ['', '"'][int(isinstance(value, str))] + str(
             value) + ['', '"'][int(isinstance(
@@ -116,7 +138,13 @@ class Robot():
     def heading(self):
         return self._hub.imu.heading()
 
-    def turn(self, angle):
+    def turn(self, angle: int):
+        """
+        Turn the robot.
+
+        Args:
+          angle: The angle to turn the robot relative to the current position.
+        """
         self.queue.append((self._drive_base.turn, (angle,), {}))
 
     async def _raise_all(self, speed=500):
@@ -160,6 +188,21 @@ class Robot():
         self.front_motor_upper = self._motors['front'].angle() + backoff
         self.front_motor_up = self.front_motor_upper + 160
         await self._raise_all()
+
+    def follow_line(self):
+        self.queue.append((self._follow_line, (), {}))
+    async def _follow_line(self):
+        while True:
+            reflectivity = await self._color_sensors['left'].reflection()
+            await wait(100)
+            min_reflectivity = 7
+            max_reflectivity = 65
+            midpoint = min_reflectivity + (max_reflectivity - min_reflectivity) / 2
+            scale_factor = 1.
+            turn_rate = (midpoint - reflectivity) * -scale_factor
+            print(f'Target: {midpoint} Reflectivity: {reflectivity} Turn Rate: {turn_rate}')
+            self._drive_base.drive(50, turn_rate)
+
 
     def initialize(self):
         self.queue.append((self._initialize, (), {}))
