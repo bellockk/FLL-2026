@@ -7,7 +7,8 @@
 		"davidanson.vscode-markdownlint",
 		"ms-toolsai.jupyter",
 		"ms-python.python",
-		"james-yu.latex-workshop"
+		"james-yu.latex-workshop",
+		"streetsidesoftware.code-spell-checker"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": []

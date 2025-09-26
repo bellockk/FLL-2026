@@ -45,7 +45,7 @@ Before you can start developing with VSCode and pushing code to the hub, you hav
 1. Execute the following code.  Change the name in the snippet below to name your robot appropriately.  In this example we will be naming the robot `batman`.
 
     ```bash
-    pybricksdev flash firmware/pybricks-primehub-v3.5.0.zip --name batman
+    pybricksdev flash firmware/pybricks-primehub-v3.6.1.zip --name batman
     ```
 
 1. Use the labelmaker to create a label with the name you used and attach it to the robot.

@@ -10,5 +10,11 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "Conda",
-    "terminal.integrated.middleClickBehavior": "paste"
+    "terminal.integrated.middleClickBehavior": "paste",
+    "python.analysis.typeCheckingMode": "standard",
+    "cSpell.words": [
+        "pybricks",
+        "pybricksdev",
+        "releasever"
+    ]
 }
