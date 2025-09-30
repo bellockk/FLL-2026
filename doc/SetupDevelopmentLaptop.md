@@ -5,7 +5,7 @@ The following guide presents a method to create a team laptop that supports both
 1. Create Installation Media
     * Follow [this guide to create a Windows 11 Install USB stick](https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d) - referred to as the "pink USB stick" in the following sections.
     * Follow [this guide to create a Fedora install USB stick](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/) - referred to as the "blue USB stick" in the following sections.
-    
+
 1. Install Windows.
 
     * Connect the pink USB stick to the laptop.

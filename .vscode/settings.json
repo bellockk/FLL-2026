@@ -13,6 +13,7 @@
     "terminal.integrated.middleClickBehavior": "paste",
     "python.analysis.typeCheckingMode": "standard",
     "cSpell.words": [
+        "Minecart",
         "pybricks",
         "pybricksdev",
         "releasever"

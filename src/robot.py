@@ -3,6 +3,8 @@ from pybricks.pupdevices import Motor, ColorSensor
 from pybricks.parameters import Direction, Port, Button, Icon, Stop
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait, multitask, run_task, hub_menu
+import ujson as json
+import ustruct as struct
 from config import (
     LEFT_MOTOR_PORT,
     RIGHT_MOTOR_PORT,
@@ -16,6 +18,7 @@ from config import (
     STRAIGHT_ACCELERATION,
     TURN_RATE,
     TURN_ACCELERATION)
+HEADER_FORMAT = '@Q'
 
 
 def diff_angles(a: int, b: int) -> int:
@@ -24,7 +27,7 @@ def diff_angles(a: int, b: int) -> int:
 
     Args:
       a: The first angle.
-      b: The seconda angle.
+      b: The second angle.
 
     Returns:
       The angle between the two given angles.
@@ -91,12 +94,43 @@ class Robot():
         self._drive_base.use_gyro(True)
         self.trigger: bool = True
         self.queue = []
-        self.font_motor_lower = None
-        self.font_motor_upper = None
+        self.front_motor_lower = None
+        self.front_motor_upper = None
         self.font_motor_up = None
         self.back_motor_lower = None
         self.back_motor_upper = None
         self.back_motor_up = None
+        self._persistent_data = [
+            'front_motor_lower',
+            'front_motor_upper',
+            'front_motor_up',
+            'back_motor_lower',
+            'back_motor_upper',
+            'back_motor_up']
+
+        # Load persistent initialization data
+        self.load_persistent_data()
+
+    def save_persistent_data(self):
+        data = {member: getattr(
+            self, member) for member in self._persistent_data}
+        payload = bytes(json.dumps(data), 'utf-8')
+        header = struct.pack(HEADER_FORMAT, len(payload))
+        self._hub.system.storage(offset=0, write=header + payload)
+
+    def load_persistent_data(self):
+        payload_size = struct.unpack(
+            HEADER_FORMAT,
+            self._hub.system.storage(
+                offset=0, read=struct.calcsize(HEADER_FORMAT)))[0]
+        payload = self._hub.system.storage(
+            offset=struct.calcsize(HEADER_FORMAT),
+            read=payload_size)
+        if payload == b'':
+            return
+        persistent_data = json.loads(str(payload, 'utf-8'))
+        for member in self._persistent_data:
+            setattr(self, member, persistent_data[member])
 
     async def mainandlog(self):
         await multitask(
@@ -123,20 +157,21 @@ class Robot():
                 'Front Motor Angle': self._motors['front'].angle(),
                 'Front Motor Speed': self._motors['front'].speed(),
                 'Back Motor Angle': self._motors['back'].angle(),
-                'Back Motor Speed': self._motors['back'].speed()}))
+                'Back Motor Speed': self._motors['back'].speed(),
+                'Heading': self.heading()}))
             await wait(500)
 
     def run(self):
         run_task(self.mainandlog())
 
-    def reset_heading(self):
-        self._hub.imu.reset_heading()
+    def reset_heading(self, heading: int | float = 0):
+        self._hub.imu.reset_heading(heading)
 
     def wait(self, time):
         self.queue.append((wait, (time,), {}))
 
     def heading(self):
-        return self._hub.imu.heading()
+        return self._hub.imu.heading('3D')
 
     def turn(self, angle: int):
         """
@@ -171,6 +206,9 @@ class Robot():
             self._motors['back'].run_target(speed, self.back_motor_lower),
             self._motors['front'].run_target(speed, self.front_motor_upper))
 
+    def initialize(self):
+        self.queue.append((self._initialize, (), {}))
+
     async def _initialize(self):
         await multitask(
             self._motors['back'].run_until_stalled(200, then=Stop.HOLD),
@@ -188,24 +226,9 @@ class Robot():
         self.front_motor_upper = self._motors['front'].angle() + backoff
         self.front_motor_up = self.front_motor_upper + 160
         await self._raise_all()
-
-    def follow_line(self):
-        self.queue.append((self._follow_line, (), {}))
-    async def _follow_line(self):
-        while True:
-            reflectivity = await self._color_sensors['left'].reflection()
-            await wait(100)
-            min_reflectivity = 7
-            max_reflectivity = 65
-            midpoint = min_reflectivity + (max_reflectivity - min_reflectivity) / 2
-            scale_factor = 1.
-            turn_rate = (midpoint - reflectivity) * -scale_factor
-            print(f'Target: {midpoint} Reflectivity: {reflectivity} Turn Rate: {turn_rate}')
-            self._drive_base.drive(50, turn_rate)
+        self.save_persistent_data()
 
 
-    def initialize(self):
-        self.queue.append((self._initialize, (), {}))
 
     def fork_lift(self, angle, speed=120):
         target = int(self.back_motor_lower + (self.back_motor_upper - self.back_motor_lower) * angle * .01)
@@ -310,7 +333,7 @@ class Robot():
         while True:
             selected = None
             for motor in self._motors.values():
-                motor.hold()
+                motor.stop()
             if len(choices) > 1:
                 selected = hub_menu(*choices)
             elif len(choices) == 1:

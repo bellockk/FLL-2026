@@ -2,8 +2,6 @@
 
 Welcome to the 2025-2026 season of First Lego League at Old Mill Middle School South!!
 
-[Team Charter](doc/Charter.md)
-
 ## PyBricks API Documentation
 
 <https://docs.pybricks.com/en/stable/index.html>
@@ -19,7 +17,5 @@ Welcome to the 2025-2026 season of First Lego League at Old Mill Middle School S
 [Setting up a Development Machine](doc/SetupDevelopmentLaptop.md)
 
 [Mission Model Assembly](doc/MissionModelAssembly.md)
-
-[Misisons](doc/Missions.md)
 
 [Robot Design](doc/RobotDesign.md)
