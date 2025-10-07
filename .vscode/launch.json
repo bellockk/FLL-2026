@@ -16,6 +16,17 @@
             ]
         },
         {
+            "name": "Run Robin",
+            "type": "debugpy",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/bin/publish_wrapper.py",
+            "args": [
+                "robin"
+            ]
+        },
+       {
             "name": "Run Jaws",
             "type": "debugpy",
             "request": "launch",
@@ -27,7 +38,7 @@
             ]
         },
         {
-            "name": "Run Current File",
+            "name": "Run Current File on Robin",
             "type": "debugpy",
             "request": "launch",
             "module": "pybricksdev",
@@ -35,7 +46,9 @@
             "args": [
                 "run",
                 "ble",
-                "${file}"
+                "${file}",
+                "--name",
+                "robin"
             ]
         },
         {
