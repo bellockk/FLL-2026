@@ -1,5 +1,4 @@
 from robot import Robot
-
 robot = Robot()
 
 def run1():
@@ -13,8 +12,10 @@ def run1():
     ## 0s 70pts  0deg is West
 
 def run2():
+
     # Drive from Left Home to Surface Brushing
-    pass
+    robot.drive(400)
+    robot.drive(200)
 
     # Surface Brushing (30pts)
 
@@ -38,7 +39,8 @@ def run2():
 
 def run3():
     # Drive from Left Home to Salvage Operation
-    pass
+    robot.fork_lift(0)
+    robot.plow(0)
 
     # Salvage Operation (30pts)
 
@@ -63,7 +65,8 @@ def run3():
 
 def run4():
     # Drive from Right Home to Silo
-    pass
+    robot.fork_lift(100)
+    robot.plow(100)
 
     # Silo (30pts)
 
@@ -87,7 +90,8 @@ def run4():
 
 def run5():
     # Drive from Right Home to Site Marking
-    pass
+    robot.fork_lift(-200)
+    robot.plow(-200)
 
     # Site Marking (10pts)
 
@@ -107,6 +111,10 @@ def run5():
 
     # XXXs 75pts (545pts Total)
 
+def run6():
+    robot.fork_lift(200)
+    robot.plow(200)
+
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5)
+robot.menu(run1, run2, run3, run4, run5, run6)

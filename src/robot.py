@@ -17,41 +17,17 @@ from config import (
     STRAIGHT_SPEED,
     STRAIGHT_ACCELERATION,
     TURN_RATE,
-    TURN_ACCELERATION)
-HEADER_FORMAT = '@Q'
+    TURN_ACCELERATION,
+    HEADER_FORMAT)
 
 
-def diff_angles(a: int, b: int) -> int:
-    """
-    Return the angle between two given angles.
-
-    Args:
-      a: The first angle.
-      b: The second angle.
-
-    Returns:
-      The angle between the two given angles.
-    """
-    return ((b - a) + 180) % 360 - 180
-
-
-def dict2json(dictionary: dict):
-    """
-    Convert a python dictionary to JSON.
-
-    Note: This function only supports the very simple case of a flat
-      dictionary.  It does not support recursion into nested dictionaries.
-
-    Args:
-      dictionary: The dictionary to convert to JSON.
-
-    Returns:
-      A JSON representation of the input dictionary.
-    """
-    return '{' + ', '.join([
-        '"' + key + '": ' + ['', '"'][int(isinstance(value, str))] + str(
-            value) + ['', '"'][int(isinstance(
-                value, str))] for key, value in dictionary.items()]) + '}'
+def robot_api(func):
+    def wrapper(*args, **kwargs):
+        args[0].queue.append((func, args, kwargs))
+    for attr in ['doc', 'name', 'module']:
+        if hasattr(func, f'__{attr}__'):
+            wrapper.__doc__ = func.__doc__
+    return wrapper
 
 
 class Robot():
@@ -63,7 +39,7 @@ class Robot():
 
         # Change the stop program button to pressing both side buttons at the
         # same time
-        self._hub.system.set_stop_button([Button.RIGHT_UP])
+        self._hub.system.set_stop_button((Button.LEFT, Button.RIGHT))
 
         # Initialize Motors
         self._motors = {
@@ -132,38 +108,6 @@ class Robot():
         for member in self._persistent_data:
             setattr(self, member, persistent_data[member])
 
-    async def mainandlog(self):
-        await multitask(
-            self.main(),
-            self.logit())
-
-    async def main(self):
-        for callable, args, kwargs in self.queue:
-            await callable(*args, **kwargs)
-        self.queue[:] = []
-        self.trigger = False
-
-    async def logit(self):
-        while self.trigger:
-            print(dict2json({
-                'Left Color Sensor': await self._color_sensors[
-                    'left'].reflection(),
-                'Right Color Sensor': await self._color_sensors[
-                    'right'].reflection(),
-                'Right Motor Angle': self._motors['right'].angle(),
-                'Right Motor Speed': self._motors['right'].speed(),
-                'Left Motor Angle': self._motors['left'].angle(),
-                'Left Motor Speed': self._motors['left'].speed(),
-                'Front Motor Angle': self._motors['front'].angle(),
-                'Front Motor Speed': self._motors['front'].speed(),
-                'Back Motor Angle': self._motors['back'].angle(),
-                'Back Motor Speed': self._motors['back'].speed(),
-                'Heading': self.heading()}))
-            await wait(500)
-
-    def run(self):
-        run_task(self.mainandlog())
-
     def reset_heading(self, heading: int | float = 0):
         self._hub.imu.reset_heading(heading)
 
@@ -213,7 +157,7 @@ class Robot():
         await multitask(
             self._motors['back'].run_until_stalled(200, then=Stop.HOLD),
             self._motors['front'].run_until_stalled(200, then=Stop.HOLD))
-        backoff = 35
+        backoff = 5
         await self._motors['back'].run_until_stalled(200, then=Stop.HOLD)
         self.back_motor_lower = self._motors['back'].angle() - backoff
         await self._motors['back'].run_until_stalled(-200, then=Stop.HOLD)
@@ -230,8 +174,12 @@ class Robot():
 
 
 
-    def fork_lift(self, angle, speed=120):
-        target = int(self.back_motor_lower + (self.back_motor_upper - self.back_motor_lower) * angle * .01)
+    def fork_lift(self, percent, speed=120):
+        # Gate to between 0 and 100
+        percent = min(max(percent, 0), 100)
+
+        target = int(self.back_motor_lower + (
+            self.back_motor_upper - self.back_motor_lower) * percent * .01)
         self.queue.append((self._motors['back'].run_target, (speed, target,), {}))
     def fork_lift_stow(self, speed=500):
         self.queue.append((self._motors['back'].run_target, (speed, self.back_motor_upper), {}))
@@ -251,8 +199,12 @@ class Robot():
     def lower_plow_stow_fork_lift(self, speed=500):
         self.queue.append((self._lower_plow_stow_fork_lift, (speed,), {}))
 
-    def plow(self, angle, speed=120):
-        target = int(self.front_motor_lower + (self.front_motor_upper - self.front_motor_lower) * angle * .01)
+    def plow(self, percent, speed=120):
+        # Gate to between 0 and 100
+        percent = min(max(percent, 0), 100)
+
+        target = int(self.front_motor_lower + (
+            self.front_motor_upper - self.front_motor_lower) * percent * .01)
         self.queue.append((self._motors['front'].run_target, (speed, target,), {}))
     def plow_stow(self, speed=500):
         self.queue.append((self._motors['front'].run_target, (speed, self.front_motor_upper), {}))
@@ -312,9 +264,16 @@ class Robot():
             TURN_RATE,
             TURN_ACCELERATION)
 
-    def drive(self, distance, speed=STRAIGHT_SPEED):
-        self.queue.append((self._drive, (distance,speed,), {}))
-    async def _drive(self, distance, speed=STRAIGHT_SPEED):
+    @robot_api
+    async def drive(self, distance: int, speed: int=STRAIGHT_SPEED):
+        """
+        Drive a set distance in a straight line.
+
+        Args:
+          distance: The distance to travel.  Positive to drive forwards,
+            negative to drive backwards.
+          speed: The speed at which to drive.
+        """
         self._drive_base.settings(
             speed,
             STRAIGHT_ACCELERATION,
@@ -327,29 +286,93 @@ class Robot():
             TURN_RATE,
             TURN_ACCELERATION)
 
+    async def logit(self):
+        self.trigger = True
+        while self.trigger:
+            print(json.dumps({
+                'Left Color Sensor': await self._color_sensors[
+                    'left'].reflection(),
+                'Right Color Sensor': await self._color_sensors[
+                    'right'].reflection(),
+                'Right Motor Angle': self._motors['right'].angle(),
+                'Right Motor Speed': self._motors['right'].speed(),
+                'Left Motor Angle': self._motors['left'].angle(),
+                'Left Motor Speed': self._motors['left'].speed(),
+                'Front Motor Angle': self._motors['front'].angle(),
+                'Front Motor Speed': self._motors['front'].speed(),
+                'Back Motor Angle': self._motors['back'].angle(),
+                'Back Motor Speed': self._motors['back'].speed(),
+                'Heading': self.heading()}))
+            await wait(500)
+
+    async def process_queue(self):
+        for callable, args, kwargs in self.queue:
+            await callable(*args, **kwargs)
+        self.queue[:] = []
+
     def menu(self, *runs):
-        run_map = {str(i + 1): run for i, run in enumerate(runs)}
-        choices = list(sorted(run_map.keys())) + ['X']
+        run_task(self.menuandlog(*runs))
+
+    async def menuandlog(self, *runs):
+        await multitask(
+            self._menu(*runs),
+            self.logit())
+
+    async def _menu(self, *runs):
+        choices = [str(i + 1) for i in range(len(runs))]
+        run_map = dict(zip(choices, runs))
+
+        # Set stop button to Bluetooth to allow center button for selection
+
+        index = 0
+        self.display_item(choices[index])
+
+        debounce_count = 2  # Consecutive polls for debounce (40ms effective time)
+
+        # Button states and counters
+        state = {}
+        for button in [Button.LEFT, Button.RIGHT, Button.CENTER]:
+            state[button] = {
+                'state': False,
+                'press': 0,
+                'release': 0}
+        state[Button.LEFT]['direction'] = -1
+        state[Button.RIGHT]['direction'] = 1
+        selecting = False  # Flag to indicate center press initiated
+
         while True:
-            selected = None
-            for motor in self._motors.values():
-                motor.stop()
-            if len(choices) > 1:
-                selected = hub_menu(*choices)
-            elif len(choices) == 1:
-                self._hub.display.char("1")
-                while not Button.CENTER in self._hub.buttons.pressed():
-                    pass
-                selected = "1"
-            if selected is not None:
-                if selected == 'X':
-                    self.raise_all()
-                    self.stow_all()
-                    break
-                run_map[selected]()
-                while choices[0] != selected:
-                    choices.append(choices.pop(0))
-                choices.append(choices.pop(0))
-                self._hub.display.icon(Icon.HEART)
-            self.wait(250)
-            self.run()
+            pressed = self._hub.buttons.pressed()
+            for button, status in state.items():
+                if button in pressed:
+                    if not status['state']:
+                        status['press'] += 1
+                        if status['press'] >= debounce_count:
+                            status['state'] = True
+                            status['press'] = 0
+                            # Act on Button Press
+                            if button == Button.CENTER:
+                                self._hub.display.icon(Icon.HEART)
+                                runs[index]()
+                                await self.process_queue()
+                            else:
+                                index = (index + state[button][
+                                    'direction']) % len(choices)
+                            self.display_item(choices[index])
+
+                    status['release'] = 0
+                else:
+                    if status['state']:
+                        status['release'] += 1
+                        if status['release'] >= debounce_count:
+                            status['state'] = False
+                            status['release'] = 0
+                    status['press'] = 0
+                await wait(10)
+
+    def display_item(self, item):
+        if isinstance(item, str):
+            self._hub.display.char(item)
+        elif isinstance(item, int):
+            self._hub.display.number(item)
+        else:
+            raise ValueError("Items must be str or int")

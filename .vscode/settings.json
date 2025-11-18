@@ -9,6 +9,9 @@
             "args": ["run", "-n", "fll", "--no-capture-output", "bash"]
         }
     },
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnusedCoroutine": "none"
+    },
     "terminal.integrated.defaultProfile.windows": "Conda",
     "terminal.integrated.middleClickBehavior": "paste",
     "python.analysis.typeCheckingMode": "standard",
@@ -17,5 +20,6 @@
         "pybricks",
         "pybricksdev",
         "releasever"
-    ]
+    ],
+    "autoDocstring.startOnNewLine": true
 }
