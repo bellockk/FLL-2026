@@ -354,6 +354,8 @@ class Robot():
                                 self._hub.display.icon(Icon.HEART)
                                 runs[index]()
                                 await self.process_queue()
+                                for motor in self._motors.values():
+                                    motor.stop()
                             else:
                                 index = (index + state[button][
                                     'direction']) % len(choices)
