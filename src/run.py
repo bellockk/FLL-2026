@@ -201,9 +201,14 @@ def run7():
 
     # XXXs 120pts (470pts Total)
 
+def run8():
+    robot.drive(400)
+    robot.drive(-40)
+    robot.fork_lift(10)
+    robot.drive(-100)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6, run7)
+robot.menu(run1, run2, run3, run4, run5, run6, run7, run8)
 
 robot.fork_lift(50)
 robot.fork_lift(15)
