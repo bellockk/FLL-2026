@@ -163,11 +163,13 @@ def run5():
 
 
 def run6():
-    robot.fork_lift(50)
+    robot.fork_lift(80)
     robot.drive(-225)
-    robot.fork_lift(50)
-    robot.fork_lift(5)
-    robot.fork_lift(50)
+    robot.fork_lift(80, 2000)
+    robot.fork_lift(10, 2000)
+    robot.fork_lift(80, 2000)
+    robot.fork_lift(10, 2000)
+    robot.fork_lift(80, 2000)
 
 def run7():
     # Drive from Right Home to Silo
