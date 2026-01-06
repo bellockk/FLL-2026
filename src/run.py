@@ -13,29 +13,32 @@ def run1():
 
 def run2():
 
-    # Drive from Left Home to Surface Brushing
-    robot.drive(400)
-    robot.drive(200)
-
-    # Surface Brushing (30pts)
-
-    # Drive from Surface Brushing to Map Reveal
-
-    # Map Reveal (30pts)
-
-    # Drive from Map Reveal to Mineshaft Explorer
-
-    # Mineshaft Explorer (40pts)
-
-    # Careful Recovery (40pts)
-
-    # Site Marking (10pts)
-
-    # Drive to Left Home
-    # Remove and store Brush, Minecart, Topsoil and Precious Artifact
-    # Load Site Marker
-
-    # XXXs 150pts (220pts Total)
+    robot.plow(55)
+    robot.plow(50)
+    robot.drive(720)
+    robot.drive(-50)
+    robot.turn(-135)
+    robot.drive(-130)
+    robot.turn(34)
+    robot.fork_lift(10)
+    robot.drive(-105)
+    robot.fork_lift(18)
+    robot.drive(110)
+    robot.fork_lift(40)
+    robot.turn(15)
+    robot.fork_lift(10)
+    robot.drive(-100)
+    robot.fork_lift(40)
+    robot.drive(50)
+    robot.turn(27)
+    robot.plow(90)
+    robot.drive(-80)
+    robot.plow(45)
+    robot.drive(150)
+    robot.plow(60)
+    robot.turn(75)
+    robot.plow(50)
+    robot.drive(-550)
 
 def run3():
     # Drive from Left Home to Salvage Operation
