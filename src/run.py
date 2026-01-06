@@ -79,37 +79,9 @@ def run3():
 
     # XXXs 130pts (350pts Total)
 
+
+
 def run4():
-    # Drive from Right Home to Silo
-    robot.plow(55)
-    robot.fork_lift(50)
-    robot.turn(13)
-    robot.drive(620)
-    robot.turn(-13)
-    robot.drive(1100)
-
-
-    # Silo (30pts)
-
-    # Drive from Silo to Forge
-
-    # Forge (30pts)
-
-    # Heavy Lifting (30pts)
-
-    # Push Boulders off table
-
-    # Drive from Boulder Push to Who Lived Here
-
-    # Who Lived Here (30pts)
-
-    # Drive from Who Lived Here to Right Home
-    # Load all Forum Artifacts collected so far
-    # Load Site Marker
-
-    # XXXs 120pts (470pts Total)
-
-def run5():
     # Drive from Right Home to Site Marking
     robot.plow(50)
     robot.fork_lift(50)
@@ -170,7 +142,7 @@ def run5():
 
     # XXXs 75pts (545pts Total)
 
-def run6():
+def run5():
     robot.plow(60)
     robot.fork_lift(50)
     robot.fork_lift(20)
@@ -190,14 +162,42 @@ def run6():
     robot.drive(580)
 
 
-def run7():
+def run6():
     robot.fork_lift(50)
     robot.drive(-225)
     robot.fork_lift(50)
     robot.fork_lift(5)
     robot.fork_lift(50)
 
+def run7():
+    # Drive from Right Home to Silo
+    robot.plow(55)
+    robot.fork_lift(50)
+    robot.turn(13)
+    robot.drive(620)
+    robot.turn(-13)
+    robot.drive(1100)
 
+
+    # Silo (30pts)
+
+    # Drive from Silo to Forge
+
+    # Forge (30pts)
+
+    # Heavy Lifting (30pts)
+
+    # Push Boulders off table
+
+    # Drive from Boulder Push to Who Lived Here
+
+    # Who Lived Here (30pts)
+
+    # Drive from Who Lived Here to Right Home
+    # Load all Forum Artifacts collected so far
+    # Load Site Marker
+
+    # XXXs 120pts (470pts Total)
 
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
