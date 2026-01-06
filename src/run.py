@@ -42,8 +42,21 @@ def run2():
 
 def run3():
     # Drive from Left Home to Salvage Operation
-    robot.fork_lift(0)
-    robot.plow(0)
+    robot.fork_lift(35)
+    robot.plow(60)
+    robot.drive(-230)
+    robot.plow(80)
+    robot.drive(200)
+    robot.plow(70)
+    robot.drive(-130)
+    robot.plow(80)
+    robot.drive(-100)
+    robot.plow(60)
+    robot.drive(100)
+    robot.turn(-45)
+    robot.drive(-220)
+    robot.turn(45)
+    robot.drive(-900)
 
     # Salvage Operation (30pts)
 
@@ -68,8 +81,13 @@ def run3():
 
 def run4():
     # Drive from Right Home to Silo
-    robot.fork_lift(100)
-    robot.plow(100)
+    robot.plow(55)
+    robot.fork_lift(50)
+    robot.turn(13)
+    robot.drive(620)
+    robot.turn(-13)
+    robot.drive(1100)
+
 
     # Silo (30pts)
 
@@ -93,8 +111,29 @@ def run4():
 
 def run5():
     # Drive from Right Home to Site Marking
-    robot.fork_lift(-200)
-    robot.plow(-200)
+    robot.plow(50)
+    robot.fork_lift(50)
+    robot.fork_lift(15)
+    robot.drive(-285)
+    robot.turn(-60)
+    robot.fork_lift(25)
+    robot.drive(-110)
+    robot.plow(75)
+    robot.turn(3)
+    robot.fork_lift(5)
+    robot.plow(90)
+    robot.drive(170)
+    robot.drive(-40)
+    robot.plow(60)
+    robot.turn(-20)
+    robot.drive(-28)
+    robot.plow(90)
+    robot.turn(-40)
+    robot.plow(50)
+    robot.fork_lift(50)
+    robot.drive(100)
+    robot.turn(-45)
+    robot.drive(-180)
 
     # Site Marking (10pts)
 
@@ -114,10 +153,56 @@ def run5():
 
     # XXXs 75pts (545pts Total)
 
+
+    # Drive from Site Marking Opposing Team's Minecart
+
+    # Obtain Opposing Team's Minecart
+
+    # Drive from Opposing Team's Minecart to Statue Rebuild
+
+    # Statue Rebuild (30pts)
+
+    # Drive from Statue to Forum
+
+    # Forum (35pts)
+
+    # Move away from Forum so no pieces are touching robot
+
+    # XXXs 75pts (545pts Total)
+
 def run6():
-    robot.fork_lift(200)
-    robot.plow(200)
+    robot.plow(60)
+    robot.fork_lift(50)
+    robot.fork_lift(20)
+    robot.drive(-620)
+    robot.turn(-22)
+    robot.drive(30)
+    robot.fork_lift(0)
+    robot.turn(43)
+    robot.drive(95)
+    robot.turn(-10)
+    robot.fork_lift(40)
+    robot.turn(8)
+    robot.plow(76)
+    robot.drive(-120)
+    robot.plow(50)
+    robot.turn(-22)
+    robot.drive(580)
+
+
+def run7():
+    robot.fork_lift(50)
+    robot.drive(-225)
+    robot.fork_lift(50)
+    robot.fork_lift(5)
+    robot.fork_lift(50)
+
+
 
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6)
+robot.menu(run1, run2, run3, run4, run5, run6, run7)
+
+robot.fork_lift(50)
+robot.fork_lift(15)
+robot.fork_lift(50)
