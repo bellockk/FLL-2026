@@ -44,19 +44,26 @@ def run3():
     # Drive from Left Home to Salvage Operation
     robot.fork_lift(35)
     robot.plow(60)
-    robot.drive(-230)
-    robot.plow(80)
+    robot.drive(-370)
+    robot.plow(85)
+    robot.turn(8)
+    robot.drive(40)
+    robot.drive(-40)
+    robot.drive(40)
+    robot.drive(-40)
+    robot.drive(40)
+    robot.turn(-8)
+    robot.fork_lift(50)
+    robot.turn(12)
     robot.drive(200)
-    robot.plow(70)
-    robot.drive(-130)
-    robot.plow(80)
-    robot.drive(-100)
-    robot.plow(60)
-    robot.drive(100)
-    robot.turn(-45)
-    robot.drive(-220)
-    robot.turn(45)
+    robot.fork_lift(47)
+    robot.drive(-155)
+    robot.fork_lift(60)
+    robot.turn(-25)
+    robot.drive(-550)
+    robot.turn(20)
     robot.drive(-900)
+
 
     # Salvage Operation (30pts)
 
@@ -202,10 +209,10 @@ def run7():
     # XXXs 120pts (470pts Total)
 
 def run8():
-    robot.drive(400)
-    robot.drive(-40)
-    robot.fork_lift(10)
-    robot.drive(-100)
+    robot.drive(658)
+    robot.turn(-35)
+    robot.drive(115)
+    robot.drive(-90)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5, run6, run7, run8)
