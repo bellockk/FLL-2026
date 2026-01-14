@@ -13,32 +13,35 @@ def run1():
 
 def run2():
 
+    robot.fork_lift(50)
+    robot.plow(57)
     robot.plow(55)
-    robot.plow(50)
-    robot.drive(720)
+    robot.drive(630)
+    robot.turn(-150)
     robot.drive(-50)
-    robot.turn(-135)
-    robot.drive(-130)
-    robot.turn(34)
-    robot.fork_lift(10)
-    robot.drive(-105)
-    robot.fork_lift(18)
-    robot.drive(110)
-    robot.fork_lift(40)
-    robot.turn(15)
-    robot.fork_lift(10)
-    robot.drive(-100)
-    robot.fork_lift(40)
-    robot.drive(50)
-    robot.turn(27)
-    robot.plow(90)
-    robot.drive(-80)
+    robot.curve(-250, -40)
+    robot.turn(35)
     robot.plow(45)
-    robot.drive(150)
+    robot.drive(110)
     robot.plow(60)
-    robot.turn(75)
+    robot.turn(-12)
+    robot.fork_lift(10)
+    robot.drive(-110)
+    robot.fork_lift(20)
+    robot.drive(105)
+    robot.fork_lift(40)
+    robot.turn(11)
+    robot.fork_lift(10)
+    robot.drive(-110)
+    robot.fork_lift(50)
+    robot.fork_lift(35)
+    robot.turn(30)
+    robot.plow(95)
+    robot.drive(-100)
     robot.plow(50)
-    robot.drive(-550)
+    robot.drive(100)
+    robot.turn(75)
+    robot.drive(-650)
 
 def run3():
     # Drive from Left Home to Salvage Operation
@@ -214,9 +217,9 @@ def run8():
     robot.drive(115)
     robot.drive(-90)
 
-# !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6, run7, run8)
+def run9():
+    robot.drive(100)
 
-robot.fork_lift(50)
-robot.fork_lift(15)
-robot.fork_lift(50)
+
+# !! DO NOT REMOVE THE FOLLOWING LINES !!
+robot.menu(run1, run2, run3, run4, run5, run6, run7, run8, run9)
