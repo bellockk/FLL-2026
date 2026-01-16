@@ -92,30 +92,86 @@ def run3():
 
 
 def run4():
-    # Drive from Right Home to Site Marking
+    # Drive to What's on Sale? (Wares)
     robot.plow(50)
-    robot.fork_lift(50)
     robot.fork_lift(15)
-    robot.drive(-285)
-    robot.turn(-60)
-    robot.fork_lift(25)
-    robot.drive(-110)
-    robot.plow(75)
-    robot.turn(3)
-    robot.fork_lift(5)
+    robot.drive(-235)
+
+    # Raise Market Wares
+    robot.turn(-14)
+
+    # Tip scale so it touches the mat
+    robot.fork_lift(20)
+
+    # Raise the roof on What's for Sale
+    robot.drive(-105)
+
+    # Ensure Raise Market Wares is Touching the mat
     robot.plow(90)
-    robot.drive(170)
-    robot.drive(-40)
+    robot.turn(2)
+    robot.fork_lift(15)
+
+    # Raise the roof on What's for Sale?
+    robot.drive(174)
+
+    # Unhook the fork lift from What's for Sale's Roof
+    robot.fork_lift(22)
+    robot.drive(-70)
+
+    # Drive to Who Lived Here
     robot.plow(60)
-    robot.turn(-20)
-    robot.drive(-28)
-    robot.plow(90)
-    robot.turn(-40)
+    robot.turn(56)
+    robot.drive(-310)
+
+    # Upright structure floor
+    robot.turn(-17)
+
+    # Drive to Forge
+    robot.drive(30)
+    robot.fork_lift(0)
+    robot.turn(40)
+    robot.drive(95)
+    robot.turn(-10)
+    robot.fork_lift(40)
+
+    # Release Ore Blocks from Forge
+    robot.turn(14)
+
+    # Heavy Lifting
+    robot.plow(78)
+    robot.drive(-120)
     robot.plow(50)
-    robot.fork_lift(50)
-    robot.drive(100)
-    robot.turn(-45)
-    robot.drive(-180)
+
+    # Drive off mat
+    robot.turn(-22)
+    robot.drive(700)
+
+
+    # robot.turn(-17)
+    # robot.drive(-35)
+    # robot.plow(99)
+    # robot.turn(-40)
+    # robot.plow(50)
+    # robot.fork_lift(50)
+    # robot.drive(-90)
+    # robot.turn(120)
+    # robot.fork_lift(22)
+    # robot.drive(-325)
+
+    # robot.turn(-15)
+    # robot.drive(30)
+    # robot.fork_lift(0)
+    # robot.turn(43)
+    # robot.drive(95)
+    # robot.turn(-10)
+    # robot.fork_lift(40)
+    # robot.turn(8)
+    # robot.plow(76)
+    # robot.drive(-120)
+    # robot.plow(50)
+    # robot.turn(-22)
+    # robot.drive(580)
+
 
     # Site Marking (10pts)
 
