@@ -50,21 +50,21 @@ def run3():
     robot.drive(-370)
     robot.plow(85)
     robot.turn(8)
-    robot.drive(40)
-    robot.drive(-40)
-    robot.drive(40)
-    robot.drive(-40)
-    robot.drive(40)
+    robot.drive(43)
+    robot.drive(-43)
+    robot.drive(43)
+    robot.drive(-43)
+    robot.drive(43)
     robot.turn(-8)
     robot.fork_lift(50)
-    robot.turn(12)
+    robot.turn(13)
     robot.drive(200)
-    robot.fork_lift(47)
+    robot.fork_lift(48)
     robot.drive(-155)
     robot.fork_lift(60)
-    robot.turn(-25)
+    robot.turn(-27)
     robot.drive(-550)
-    robot.turn(20)
+    robot.turn(22)
     robot.drive(-900)
 
 
@@ -121,7 +121,7 @@ def run4():
     # Drive to Who Lived Here
     robot.plow(60)
     robot.turn(56)
-    robot.drive(-310)
+    robot.drive(-308)
 
     # Upright structure floor
     robot.turn(-17)
@@ -130,20 +130,21 @@ def run4():
     robot.drive(30)
     robot.fork_lift(0)
     robot.turn(40)
-    robot.drive(95)
+    robot.drive(93)
     robot.turn(-10)
     robot.fork_lift(40)
 
     # Release Ore Blocks from Forge
-    robot.turn(14)
+    robot.turn(16)
 
     # Heavy Lifting
-    robot.plow(78)
-    robot.drive(-120)
+    robot.plow(77)
+    robot.drive(-120,50)
     robot.plow(50)
 
     # Drive off mat
-    robot.turn(-22)
+    robot.drive(50)
+    robot.turn(-24)
     robot.drive(700)
 
 
@@ -225,11 +226,12 @@ def run6():
     robot.plow(50)
     robot.drive(410)
     robot.plow(65)
+ #   robot.drive(-480)
     robot.drive(-100)
-    robot.turn(-98)
-    robot.drive(-215)
-    robot.fork_lift(20)
-    robot.drive(200)
+    robot.turn(-103)
+    robot.drive(-260)
+    robot.fork_lift(40)
+  #  robot.drive(200)
 
 def run7():
     # Drive from Left for the Final Run
@@ -292,32 +294,35 @@ def run8():
 
 def run9():
 
-    robot.plow(55)
     robot.plow(50)
-    robot.drive(720)
-    robot.drive(-50)
-    robot.turn(-135)
-    robot.drive(-130)
-    robot.turn(34)
-    robot.fork_lift(10)
-    robot.drive(-105)
-    robot.fork_lift(18)
-    robot.drive(110)
-    robot.fork_lift(40)
-    robot.turn(15)
-    robot.fork_lift(10)
-    robot.drive(-100)
-    robot.fork_lift(40)
-    robot.drive(50)
-    robot.turn(27)
-    robot.plow(90)
-    robot.drive(-80)
+    robot.fork_lift(50)
+    robot.drive(200)
+    robot.plow(87)
+    robot.drive(340)
+    robot.drive(-60)
+    robot.turn(-71)
+    robot.fork_lift(35)
+    robot.drive(-77)
     robot.plow(45)
-    robot.drive(150)
+    robot.turn(34)
+    robot.drive(210)
+    robot.fork_lift(63)
+    robot.plow(80)
+    robot.turn(-89)
     robot.plow(60)
-    robot.turn(75)
-    robot.plow(50)
-    robot.drive(-550)
+    robot.drive(-57)
+    robot.turn(28)
+    robot.fork_lift(10)
+    robot.drive(-105,50)
+    robot.fork_lift(19)
+    robot.drive(105)
+    robot.fork_lift(50)
+    robot.turn(120)
+    robot.plow(90)
+    robot.drive(-600)
+
+
+
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5, run6, run7, run8, run9)
