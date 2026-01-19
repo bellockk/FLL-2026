@@ -294,32 +294,59 @@ def run8():
 
 def run9():
 
+    # Drive out of the starting area
     robot.plow(50)
     robot.fork_lift(50)
     robot.drive(200)
+
+    # Adjust attachments for Surface Brushing
     robot.plow(87)
-    robot.drive(340)
-    robot.drive(-60)
-    robot.turn(-71)
-    robot.fork_lift(35)
-    robot.drive(-77)
-    robot.plow(45)
+
+    # Swipe Surface Brushing
+    robot.drive(350)
+    robot.drive(-70)
+
+    # Drive to Statue Rebuild
+    robot.turn(-72)
+    robot.fork_lift(40)
+    robot.drive(-55, 50)
+
+    # Rebuild Statue
+    robot.plow(45, 500)
+
+    # Drive to Map Reveal
     robot.turn(34)
     robot.drive(210)
+
+    #
     robot.fork_lift(63)
     robot.plow(80)
+
+    # Cart Push
     robot.turn(-89)
     robot.plow(60)
-    robot.drive(-57)
-    robot.turn(28)
-    robot.fork_lift(10)
-    robot.drive(-105,50)
-    robot.fork_lift(19)
-    robot.drive(105)
+
+    #
+    #robot.drive(-57)
+    #robot.turn(30)
+    robot.turn(162)
+    robot.drive(120)
+    robot.turn(-121)
+    robot.drive(40)
+    robot.fork_lift(5)
+    robot.drive(-125,50)
+
+    #robot.curve(-500, -5)
+    #robot.drive(-105,50)
+    robot.fork_lift(17)
+    robot.drive(125,50)
     robot.fork_lift(50)
-    robot.turn(120)
+    robot.turn(105)
     robot.plow(90)
-    robot.drive(-600)
+    robot.drive(-400)
+    robot.turn(-20)
+    robot.plow(60)
+    robot.drive(-400)
 
 
 
