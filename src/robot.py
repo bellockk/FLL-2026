@@ -15,6 +15,7 @@ from config import (
     WHEEL_DIAMETER,
     AXLE_TRACK,
     STRAIGHT_SPEED,
+    MAX_STRAIGHT_SPEED,
     STRAIGHT_ACCELERATION,
     TURN_RATE,
     TURN_ACCELERATION,
@@ -258,7 +259,7 @@ class Robot():
           speed (Number, mm/s): The speed at which to drive.
         """
         self._drive_base.settings(
-            speed,
+            min(MAX_STRAIGHT_SPEED, speed),
             STRAIGHT_ACCELERATION,
             TURN_RATE,
             TURN_ACCELERATION)
