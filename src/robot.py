@@ -341,6 +341,8 @@ class Robot():
                 await self._process_queue()
                 for motor in self._motors.values():
                     motor.stop()
+                index = (index + 1) % num_choices
+
             elif Button.LEFT in pressed:
                 index = (index - 1) % num_choices
                 await wait(300)  # Debounce
