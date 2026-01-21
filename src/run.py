@@ -14,21 +14,20 @@ def run1():
 def run2():
 
     # Drive out of the starting area
-    robot.plow(50)
-    robot.fork_lift(50)
-    robot.drive(200)
+    robot.raise_all(1000)
+    robot.drive(200,700)
 
     # Adjust attachments for Surface Brushing
     robot.plow(87)
 
     # Swipe Surface Brushing
-    robot.drive(360)
-    robot.drive(-80)
+    robot.drive(360,700)
+    robot.drive(-80,700)
 
     # Drive to Statue Rebuild
-    robot.turn(-72)
+    robot.turn(-71)
     robot.fork_lift(40)
-    robot.drive(-70, 50)
+    robot.drive(-72, 50)
 
     # Rebuild Statue
     robot.plow(45, 500)
@@ -52,35 +51,42 @@ def run2():
     robot.drive(120)
     robot.turn(-121)
     robot.drive(40)
-    robot.fork_lift(5)
-    robot.drive(-125,50)
+    robot.fork_lift(7)
+    robot.drive(-120,50)
 
     #robot.curve(-500, -5)
     #robot.drive(-105,50)
-    robot.fork_lift(17)
+    robot.fork_lift(18)
     robot.drive(125,50)
     robot.fork_lift(50)
     robot.turn(105)
-    robot.plow(90)
-    robot.drive(-400)
-    robot.turn(-20)
-    robot.plow(60)
-    robot.drive(-400)
+    robot.plow(90,600)
+    robot.curve(-100,-20)
+    robot.drive(-400,100)
+    robot.plow(60,600)
+    robot.curve(-400,-20)
+ ###   robot.drive(-400,700)
+ ###   robot.turn(-20)
+ ###   robot.plow(60)
+ ###   robot.drive(-400,1000)
+    robot.raise_all(1000)
 
 def run3():
     # Drive from Left Home to Salvage Operation
+    robot.raise_all(1000)
     robot.fork_lift(60)
     robot.plow(95)
-    robot.drive(-230,500)
+    robot.drive(-230,700)
     robot.fork_lift(48)
-    robot.drive(130)
+    robot.drive(130,700)
     robot.fork_lift(38)
-    robot.drive(-100,500)
-    robot.plow(60,500)
+    robot.drive(-100)
+    robot.plow(60)
     robot.turn(-30)
-    robot.drive(-500,500)
+    robot.drive(-500,1000)
     robot.turn(38)
-    robot.drive(-1000,500)
+    robot.raise_all(1000)
+    robot.drive(-1000,1000)
 
  #   robot.fork_lift(35)
   #  robot.plow(60)
@@ -130,7 +136,7 @@ def run3():
 
 def run4():
     # Drive to What's on Sale? (Wares)
-    robot.plow(50)
+    robot.raise_all(1000)
     robot.fork_lift(19)
     robot.drive(-237)
 
@@ -178,14 +184,39 @@ def run4():
     # Heavy Lifting
     robot.plow(78)
     robot.drive(-150,50)
-    robot.plow(50)
+    robot.raise_all(1000)
 
     # Drive off mat
-    robot.drive(100)
+    robot.drive(100,1000)
     robot.turn(-24)
-    robot.drive(650)
+    robot.drive(650,1000)
+
+def run5():
+    # Drive from Right Home to Silo
+    robot.raise_all(1000)
+    robot.drive(-400,700)
+    robot.fork_lift(8)
+    robot.turn(-25)
+    robot.drive(-1350,1000)
+    robot.raise_all(1000)
 
 
+def run6():
+    # Drive from Left for Artifact Drop
+    robot.raise_all(1000)
+    robot.drive(410,700)
+    robot.plow(75,700)
+    robot.drive(-410,1000)
+    robot.raise_all(1000)
+
+def run7():
+    # Drive from Left for the Final Run (30 points)
+    robot.raise_all(1000)
+    robot.drive(610,700)
+    robot.turn(-21)
+    robot.drive(145,700)
+    robot.turn(-36)
+    robot.raise_all(1000)
 
     # Site Marking (10pts)
 
@@ -221,34 +252,6 @@ def run4():
     # Move away from Forum so no pieces are touching robot
 
     # XXXs 75pts (545pts Total)
-
-def run5():
-    # Drive from Right Home to Silo
-    robot.fork_lift(50)
-    robot.plow(55)
-    robot.drive(-400)
-    robot.fork_lift(8)
-    robot.turn(-25)
-    robot.drive(-1350)
-    robot.fork_lift(50)
-
-
-def run6():
-    # Drive from Left for Artifact Drop
-    robot.fork_lift(50)
-    robot.plow(50)
-    robot.drive(410)
-    robot.plow(75)
-    robot.drive(-410)
-    robot.plow(50)
-
-def run7():
-    # Drive from Left for the Final Run
-    robot.plow(50)
-    robot.drive(610)
-    robot.turn(-21)
-    robot.drive(145)
-    robot.turn(-36)
 
 
     # Silo (30pts)
@@ -305,58 +308,11 @@ def run8():
 def run9():
 
     # Drive out of the starting area
-    robot.plow(50)
-    robot.fork_lift(50)
-    robot.drive(200)
+    robot.drive(100)
+    robot.raise_all(1000)
+    robot.fork_lift(30,300)
+    robot.plow(30,300)
 
-    # Adjust attachments for Surface Brushing
-    robot.plow(87)
-
-    # Swipe Surface Brushing
-    robot.drive(350)
-    robot.drive(-70)
-
-    # Drive to Statue Rebuild
-    robot.turn(-72)
-    robot.fork_lift(40)
-    robot.drive(-55, 50)
-
-    # Rebuild Statue
-    robot.plow(45, 500)
-
-    # Drive to Map Reveal
-    robot.turn(34)
-    robot.drive(210)
-
-    #
-    robot.fork_lift(63)
-    robot.plow(80)
-
-    # Cart Push
-    robot.turn(-89)
-    robot.plow(60)
-
-    #
-    #robot.drive(-57)
-    #robot.turn(30)
-    robot.turn(162)
-    robot.drive(120)
-    robot.turn(-121)
-    robot.drive(40)
-    robot.fork_lift(5)
-    robot.drive(-125,50)
-
-    #robot.curve(-500, -5)
-    #robot.drive(-105,50)
-    robot.fork_lift(17)
-    robot.drive(125,50)
-    robot.fork_lift(50)
-    robot.turn(105)
-    robot.plow(90)
-    robot.drive(-400)
-    robot.turn(-20)
-    robot.plow(60)
-    robot.drive(-400)
 
 
 
