@@ -5,16 +5,13 @@ def run1():
     # Pre-Run Initialization (Get Motor Endpoints for up and down)
     robot.initialize()
 
-    ## Precision Tokens 50pts
+    # Prepare for Run 2
+    robot.raise_all(1000)
 
-    ## Equipment Inspection 20pts
-
-    ## 0s 70pts  0deg is West
 
 def run2():
 
     # Drive out of the starting area
-    robot.raise_all(1000)
     robot.drive(200,700)
 
     # Adjust attachments for Surface Brushing
@@ -36,7 +33,7 @@ def run2():
     robot.turn(34)
     robot.drive(210)
 
-    #
+    # Remove topsoil section with loop
     robot.fork_lift(63)
     robot.plow(80)
 
@@ -44,43 +41,44 @@ def run2():
     robot.turn(-89)
     robot.plow(60)
 
-    #
-    #robot.drive(-57)
-    #robot.turn(30)
+    # Drive to Precious Artifact
     robot.turn(162)
     robot.drive(120)
     robot.turn(-121)
     robot.drive(40)
     robot.fork_lift(7)
-    robot.drive(-120,50)
 
-    #robot.curve(-500, -5)
-    #robot.drive(-105,50)
+    # Retrieve the Precious Artifact
+    robot.drive(-120,50)
     robot.fork_lift(18)
     robot.drive(125,50)
     robot.fork_lift(50)
+
+    # Drive to Home picking up the brush on the way back
     robot.turn(105)
     robot.plow(90,600)
     robot.curve(-100,-20)
     robot.drive(-400,100)
     robot.plow(60,600)
     robot.curve(-400,-20)
- ###   robot.drive(-400,700)
- ###   robot.turn(-20)
- ###   robot.plow(60)
- ###   robot.drive(-400,1000)
     robot.raise_all(1000)
+
 
 def run3():
     # Drive from Left Home to Salvage Operation
-    robot.raise_all(1000)
     robot.fork_lift(60)
     robot.plow(95)
     robot.drive(-230,700)
+
+    # Clear the Sand
     robot.fork_lift(48)
     robot.drive(130,700)
+
+    # Raise Ship
     robot.fork_lift(38)
     robot.drive(-100)
+
+    # Drive to Right Launch Area
     robot.plow(60)
     robot.turn(-30)
     robot.drive(-500,1000)
@@ -88,50 +86,32 @@ def run3():
     robot.raise_all(1000)
     robot.drive(-1000,1000)
 
- #   robot.fork_lift(35)
-  #  robot.plow(60)
-   # robot.drive(-370)
-    #robot.plow(85)
- #   robot.turn(8)
-  #  robot.drive(43)
-   # robot.drive(-43)
-    #robot.drive(43)
- #   robot.drive(-43)
-  #  robot.drive(43)
-   # robot.turn(-8)
-    #robot.fork_lift(50)
- #   robot.turn(13)
-  #  robot.drive(200)
-   # robot.fork_lift(48)
-    #robot.drive(-155)
- #   robot.fork_lift(60)
-  #  robot.turn(-27)
-   # robot.drive(-550)
-    #robot.turn(22)
-    #robot.drive(-900)
+    # Angler Artifacts
+    angler_artifacts()  # <-- Comment just this line to remove angler artifacts
 
 
-    # Salvage Operation (30pts)
-
-    # Site Marking (10pts)
-
-    # Drive from Salvage Operation to Angler Artifacts
-
-    # Angler Artifacts (30pts)
-
-    # Drive from Angler Artifacts to Tip the Scales
-
-    # Tip the Scales (30pts)
-
-    # Drive from Tip the Scales to What's on Sale
-
-    # What's on Sale (30pts)
-
-    # Drive from What's on Sale to Right Home
-    # Remove Scale Pan
-
-    # XXXs 130pts (350pts Total)
-
+def angler_artifacts():
+    robot.fork_lift(35)
+    robot.plow(60)
+    robot.drive(-370)
+    robot.plow(85)
+    robot.turn(8)
+    robot.drive(43)
+    robot.drive(-43)
+    robot.drive(43)
+    robot.drive(-43)
+    robot.drive(43)
+    robot.turn(-8)
+    robot.fork_lift(50)
+    robot.turn(13)
+    robot.drive(200)
+    robot.fork_lift(48)
+    robot.drive(-155)
+    robot.fork_lift(60)
+    robot.turn(-27)
+    robot.drive(-550)
+    robot.turn(22)
+    robot.drive(-900)
 
 
 def run4():
@@ -159,7 +139,6 @@ def run4():
 
     # Unhook the fork lift from What's for Sale's Roof
     robot.drive(-70)
-  #  robot.fork_lift(22)
 
     # Drive to Who Lived Here
     robot.plow(60)
@@ -186,17 +165,22 @@ def run4():
     robot.drive(-150,50)
     robot.raise_all(1000)
 
-    # Drive off mat
+    # Drive to Right Launch Area
     robot.drive(100,1000)
     robot.turn(-24)
     robot.drive(650,1000)
 
+
 def run5():
-    # Drive from Right Home to Silo
+    # Drive from Right Launch Area to Tip the Scales
     robot.raise_all(1000)
     robot.drive(-400,700)
+
+    # Remove the Scale Pan
     robot.fork_lift(8)
     robot.turn(-25)
+
+    # Drive to Left Launch Area
     robot.drive(-1350,1000)
     robot.raise_all(1000)
 
@@ -206,6 +190,8 @@ def run6():
     robot.raise_all(1000)
     robot.drive(410,700)
     robot.plow(75,700)
+
+    # Return to Left Launch Area
     robot.drive(-410,1000)
     robot.raise_all(1000)
 
@@ -218,104 +204,6 @@ def run7():
     robot.turn(-36)
     robot.raise_all(1000)
 
-    # Site Marking (10pts)
-
-    # Drive from Site Marking Opposing Team's Minecart
-
-    # Obtain Opposing Team's Minecart
-
-    # Drive from Opposing Team's Minecart to Statue Rebuild
-
-    # Statue Rebuild (30pts)
-
-    # Drive from Statue to Forum
-
-    # Forum (35pts)
-
-    # Move away from Forum so no pieces are touching robot
-
-    # XXXs 75pts (545pts Total)
-
-
-    # Drive from Site Marking Opposing Team's Minecart
-
-    # Obtain Opposing Team's Minecart
-
-    # Drive from Opposing Team's Minecart to Statue Rebuild
-
-    # Statue Rebuild (30pts)
-
-    # Drive from Statue to Forum
-
-    # Forum (35pts)
-
-    # Move away from Forum so no pieces are touching robot
-
-    # XXXs 75pts (545pts Total)
-
-
-    # Silo (30pts)
-
-    # Drive from Silo to Forge
-
-    # Forge (30pts)
-
-    # Heavy Lifting (30pts)
-
-    # Push Boulders off table
-
-    # Drive from Boulder Push to Who Lived Here
-
-    # Who Lived Here (30pts)
-
-    # Drive from Who Lived Here to Right Home
-    # Load all Forum Artifacts collected so far
-    # Load Site Marker
-
-    # XXXs 120pts (470pts Total)
-
-def run8():
-    robot.fork_lift(50)
-    robot.plow(57)
-    robot.plow(55)
-    robot.drive(630)
-    robot.turn(-150)
-    robot.drive(-50)
-    robot.curve(-250, -40)
-    robot.turn(35)
-    robot.plow(45)
-    robot.drive(110)
-    robot.plow(60)
-    robot.turn(-12)
-    robot.fork_lift(10)
-    robot.drive(-110)
-    robot.fork_lift(20)
-    robot.drive(105)
-    robot.fork_lift(40)
-    robot.turn(11)
-    robot.fork_lift(10)
-    robot.drive(-110)
-    robot.fork_lift(50)
-    robot.fork_lift(35)
-    robot.turn(30)
-    robot.plow(95)
-    robot.drive(-100)
-    robot.plow(50)
-    robot.drive(100)
-    robot.turn(75)
-    robot.drive(-650)
-
-def run9():
-
-    # Drive out of the starting area
-    robot.drive(100)
-    robot.raise_all(1000)
-    robot.fork_lift(30,300)
-    robot.plow(30,300)
-
-
-
-
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6, run7, run8, run9)
+robot.menu(run1, run2, run3, run4, run5, run6, run7)
