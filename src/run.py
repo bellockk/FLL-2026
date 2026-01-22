@@ -181,5 +181,14 @@ def run6():
     robot.raise_all(1000)
 
 
+def run7():
+    # Drive from Left for the Final Run (30 points)
+    robot.raise_all(1000)
+    robot.drive(610,700)
+    robot.turn(-21)
+    robot.drive(145,700)
+    robot.turn(-36)
+    robot.raise_all(1000)
+
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5, run6, run7)
