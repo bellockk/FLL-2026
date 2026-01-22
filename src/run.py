@@ -10,58 +10,43 @@ def run1():
 
 
 def run2():
-
-    # Drive out of the starting area
-    robot.drive(200,700)
-
-    # Adjust attachments for Surface Brushing
-    robot.plow(87)
-
-    # Swipe Surface Brushing
-    robot.drive(360,700)
-    robot.drive(-80,700)
-
-    # Drive to Statue Rebuild
-    robot.turn(-71)
-    robot.fork_lift(40)
-    robot.drive(-72, 50)
-
-    # Rebuild Statue
-    robot.plow(45, 500)
-
-    # Drive to Map Reveal
-    robot.turn(34)
-    robot.drive(210)
-
-    # Remove topsoil section with loop
-    robot.fork_lift(63)
-    robot.plow(80)
-
-    # Cart Push
-    robot.turn(-89)
-    robot.plow(60)
-
-    # Drive to Precious Artifact
-    robot.turn(162)
-    robot.drive(120)
-    robot.turn(-121)
-    robot.drive(40)
-    robot.fork_lift(7)
-
-    # Retrieve the Precious Artifact
-    robot.drive(-120,50)
-    robot.fork_lift(18)
-    robot.drive(125,50)
-    robot.fork_lift(50)
-
-    # Drive to Home picking up the brush on the way back
-    robot.turn(105)
-    robot.plow(90,600)
-    robot.curve(-100,-20)
-    robot.drive(-400,100)
-    robot.plow(60,600)
-    robot.curve(-400,-20)
-    robot.raise_all(1000)
+    # Drive from Left for the Final Run (30 points)
+     robot.raise_all(400)
+     robot.drive(400,800)
+     robot.plow(90)
+     robot.drive(250,800)
+     robot.plow(60)
+     robot.drive(173)
+     robot.turn(-91.5)
+     robot.drive(50)
+     robot.fork_lift(8)
+     robot.drive(-100,50)
+     robot.fork_lift(18)
+     robot.plow(47)
+     robot.drive(130,50)
+     robot.fork_lift(45)
+     robot.plow(65)
+     robot.turn(10)
+     robot.drive(-90,500)
+     robot.plow(85)
+     robot.turn(-35)
+     robot.turn(72)
+     robot.fork_lift(40)
+     robot.plow(95)
+     robot.drive(-115,500)
+     robot.turn(-12)
+     robot.plow(70)
+     robot.fork_lift(48)
+     robot.drive(100,800)
+     robot.turn(82)
+     robot.plow(80)
+     robot.drive(-260)
+#    robot.raise_all(1000)
+ #   robot.drive(610,700)
+  #  robot.turn(-21)
+   # robot.drive(145,700)
+    #robot.turn(-36)
+    #robot.raise_all(1000)
 
 
 def run3():
@@ -193,15 +178,6 @@ def run6():
 
     # Return to Left Launch Area
     robot.drive(-410,1000)
-    robot.raise_all(1000)
-
-def run7():
-    # Drive from Left for the Final Run (30 points)
-    robot.raise_all(1000)
-    robot.drive(610,700)
-    robot.turn(-21)
-    robot.drive(145,700)
-    robot.turn(-36)
     robot.raise_all(1000)
 
 
