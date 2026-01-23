@@ -157,17 +157,33 @@ def run4():
 
 
 def run5():
-    # Drive from Right Launch Area to Tip the Scales
-    robot.raise_all(1000)
-    robot.drive(-400,700)
+    # # Drive from Right Launch Area to Tip the Scales
+    robot.plow(70)
+    robot.drive(-270,1000)
+    robot.turn(39)
+    robot.drive(-166,1000)
+    robot.fork_lift(5)
+    robot.turn(-22)
+    robot.drive(-480,1000)
+    robot.fork_lift(50)
+    robot.turn(-176)
+    robot.drive(210,1000)
+    robot.plow(40)
+    robot.plow(50)
+    robot.drive(-130,1000)
+    robot.turn(-45)
+    robot.drive(850,1000)
+
+
+    # robot.drive(-400,700)
 
     # Remove the Scale Pan
-    robot.fork_lift(8)
-    robot.turn(-25)
+    # robot.fork_lift(8)
+    # robot.turn(-25)
 
     # Drive to Left Launch Area
-    robot.drive(-1350,1000)
-    robot.raise_all(1000)
+    # robot.drive(-1350,1000)
+    # robot.raise_all(1000)
 
 
 def run6():
