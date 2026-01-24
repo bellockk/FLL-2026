@@ -24,8 +24,8 @@ def run2():
 
     # Drive to Careful Recovery
     robot.plow(60)
-    robot.drive(180)
-    robot.turn(-92)
+    robot.drive(182)
+    robot.turn(-89)
     robot.drive(65)
     robot.fork_lift(8)
 
@@ -46,27 +46,27 @@ def run2():
     robot.turn(-38)
 
     # Drive to Statue Rebuild
-    robot.turn(80)
+    robot.turn(77)
     robot.fork_lift(41)
     robot.plow(95)
     robot.drive(-115,500)
-    robot.turn(-18)
+    robot.turn(-17)
 
     # Statue Rebuild
     robot.fork_lift(48,1000)
 
     # Surface Brushing (Pass 2)
     robot.plow(70,1000)
-    robot.drive(100,800)
+    robot.drive(115,800)
     robot.turn(82)
     robot.plow(95)
-    robot.fork_lift(49)
+    robot.fork_lift(50)
     robot.drive(-360)
 
     # Drive Off Mat
     robot.turn(-30)
     robot.raise_all(500)
-    robot.drive(-570,1000)
+    robot.drive(-510,1000)
     robot.plow(56)
     robot.fork_lift(56)
 
@@ -111,8 +111,8 @@ def run4():
     robot.drive(95)
 
     # Raise the Ship
-    robot.turn(22)
-    robot.fork_lift(49)
+    robot.turn(15)
+    robot.fork_lift(48)
     robot.drive(140,1000)
 
     # Drive to Right Starting Area
@@ -123,7 +123,7 @@ def run4():
 
 def run5():
     # Drive to What's on Sale? (Wares)
-    robot.fork_lift(19)
+    robot.fork_lift(18)
     robot.drive(-237)
 
     # Raise Market Wares
@@ -164,17 +164,20 @@ def run5():
     robot.fork_lift(35)
 
     # Release Ore Blocks from Forge
-    robot.turn(12)
+    robot.turn(10)
+    robot.turn(-20)
 
     # Heavy Lifting
+    robot.drive(-90)
     robot.plow(78)
-    robot.drive(-150,50)
-    robot.raise_all(1000)
+    robot.turn(45)
+    robot.plow(70)
 
     # Drive to Right Launch Area
-    robot.drive(100,1000)
-    robot.turn(-24)
-    robot.drive(650,1000)
+    robot.drive(75,1000)
+    robot.turn(-80)
+    robot.drive(600,1000)
+    robot.raise_all(500)
 
 
 def run6():
@@ -193,8 +196,8 @@ def run6():
     robot.fork_lift(40)
     robot.turn(-45)
     robot.drive(-400)
-    robot.turn(48)
-    robot.plow(45, 50)
+    robot.turn(50)
+    robot.plow(45, 100)
     robot.plow(60)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
