@@ -15,7 +15,7 @@ def run2():
     # Drive out of starting area
     robot.drive(400,800)
 
-    # Configure for Surface Brushing
+    # Configure for Surface Brushingrive from Left for the FIrst Run (30 points)
     robot.fork_lift(46)
     robot.plow(91)
 
@@ -179,7 +179,7 @@ def run5():
 
 def run6():
     # Drive from Right Launch Area to Tip the Scales
-    robot.plow(70)
+    robot.plow(65, 50)
     robot.drive(-270,1000)
     robot.turn(39)
     robot.drive(-166,1000)
@@ -190,18 +190,12 @@ def run6():
 
     # Drive to Forum
     robot.drive(-480,1000)
-    robot.fork_lift(50)
-    robot.drive(50)
-    robot.turn(80)
-
-
-def run7():
-    robot.raise_all(300)
-    robot.drive(-450,1000)
-    robot.turn(20)
-    robot.fork_lift(40,50)
-    robot.drive(300)
-
+    robot.fork_lift(40)
+    robot.turn(-45)
+    robot.drive(-400)
+    robot.turn(48)
+    robot.plow(45, 50)
+    robot.plow(60)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6, run7)
+robot.menu(run1, run2, run3, run4, run5, run6)
