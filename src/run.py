@@ -1,72 +1,94 @@
 from robot import Robot
 robot = Robot()
 
-# robot.curve(300, 85)  #  Forwards right
-# robot.curve(1000, -20)  #  Forwards left
-# robot.curve(-1000, -20)  #  Backwards right
-# robot.curve(-1000, 20)  #  Backwards left
 
 def run1():
     # Pre-Run Initialization (Get Motor Endpoints for up and down)
     robot.initialize()
 
     # Prepare for Run 2
-    robot.raise_all(1000)
+    robot.plow(56)
+    robot.fork_lift(56)
 
 
 def run2():
-    # Drive from Left for the Final Run (30 points)
-     robot.plow(48)
-     robot.drive(400,800)
-     robot.plow(90)
-     robot.drive(250,800)
-     robot.plow(60)
-     robot.drive(173)
-     robot.turn(-91.5)
-     robot.drive(50)
-     robot.fork_lift(8)
-     robot.drive(-100,50)
-     robot.fork_lift(18)
-     robot.plow(47)
-     robot.drive(130,50)
-     robot.fork_lift(45)
-     robot.plow(65)
-     robot.turn(10)
-     robot.drive(-90,500)
-     robot.plow(85)
-     robot.turn(-35)
-     robot.turn(72)
-     robot.fork_lift(40)
-     robot.plow(95)
-     robot.drive(-115,500)
-     robot.turn(-12)
-     robot.plow(70)
-     robot.fork_lift(48)
-     robot.drive(100,800)
-     robot.turn(82)
-     robot.plow(90)
-     robot.drive(-360)
-     robot.turn(-30)
-     robot.raise_all(500)
-     robot.drive(-400,1000)
+    # Drive out of starting area
+    robot.drive(400,800)
 
+    # Configure for Surface Brushing
+    robot.fork_lift(46)
+    robot.plow(91)
+
+    # Surface Brushing (First Pass)
+    robot.drive(250,800)
+
+    # Drive to Careful Recovery
+    robot.plow(60)
+    robot.drive(180)
+    robot.turn(-92)
+    robot.drive(65)
+    robot.fork_lift(8)
+
+    # Careful Recovery
+    robot.drive(-112,50)
+    robot.fork_lift(18)
+    robot.plow(47)
+    robot.drive(130,50)
+
+    # Remove Topsoil Section from Map Reveal
+    robot.fork_lift(47)
+    robot.plow(65)
+
+    # Complete Mineshaft Explorer
+    robot.turn(10)
+    robot.drive(-90,500)
+    robot.plow(85)
+    robot.turn(-38)
+
+    # Drive to Statue Rebuild
+    robot.turn(80)
+    robot.fork_lift(41)
+    robot.plow(95)
+    robot.drive(-115,500)
+    robot.turn(-18)
+
+    # Statue Rebuild
+    robot.fork_lift(48,1000)
+
+    # Surface Brushing (Pass 2)
+    robot.plow(70,1000)
+    robot.drive(100,800)
+    robot.turn(82)
+    robot.plow(95)
+    robot.fork_lift(49)
+    robot.drive(-360)
+
+    # Drive Off Mat
+    robot.turn(-30)
+    robot.raise_all(500)
+    robot.drive(-570,1000)
+    robot.plow(56)
+    robot.fork_lift(56)
 
 def run3():
-   # robot.curve(600, 30)  #  Forwards right
+    # Map Reveal
     robot.drive(540, 1000)
     robot.curve(300, -40)  #  Forwards left
     robot.drive(-50)
-    robot.curve(-500, -90)  #  Backwards right
+    robot.turn(38)
+    robot.drive(-670,1000)
 
 
 def run4():
-    # Drive from Left for the Final Run (30 points)
+    # Drop Pieces off at the Forum and Flag
     robot.plow(44)
     robot.drive(190,1000)
     robot.turn(44)
     robot.drive(235,500)
     robot.drive(-40,100)
     robot.plow(60)
+
+    # Drive to Angler Artifacts
     robot.drive(-100,1000)
     robot.turn(-45)
     robot.drive(-200,1000)
@@ -75,29 +97,32 @@ def run4():
     robot.fork_lift(46)
     robot.plow(85)
     robot.turn(20)
+
+    # Raise Artifact above the ground layer
     robot.drive(70,1000)
     robot.drive(-70)
     robot.drive(70,1000)
     robot.drive(-70)
     robot.drive(90,1000)
     robot.drive(-20,1000)
+
+    # Remove Sand from Salvage Operation
     robot.turn(-20)
     robot.drive(95)
+
+    # Raise the Ship
     robot.turn(22)
     robot.fork_lift(49)
     robot.drive(140,1000)
+
+    # Drive to Right Starting Area
     robot.fork_lift(47)
     robot.drive(-127,1000)
     robot.raise_all(1000)
-    robot.turn(-35)
-    robot.drive(-400,1000)
-    robot.turn(37)
-    robot.drive(-1000,1000)
 
 
 def run5():
     # Drive to What's on Sale? (Wares)
-    robot.raise_all(1000)
     robot.fork_lift(19)
     robot.drive(-237)
 
@@ -153,22 +178,21 @@ def run5():
 
 
 def run6():
-    # # Drive from Right Launch Area to Tip the Scales
+    # Drive from Right Launch Area to Tip the Scales
     robot.plow(70)
     robot.drive(-270,1000)
     robot.turn(39)
     robot.drive(-166,1000)
     robot.fork_lift(5)
+
+    # Remove the Scale Pan
     robot.turn(-22)
+
+    # Drive to Forum
     robot.drive(-480,1000)
     robot.fork_lift(50)
-    robot.turn(-176)
-    robot.drive(210,1000)
-    robot.plow(40)
-    robot.plow(50)
-    robot.drive(-130,1000)
-    robot.turn(-45)
-    robot.drive(850,1000)
+    robot.drive(50)
+    robot.turn(80)
 
 
 def run7():
