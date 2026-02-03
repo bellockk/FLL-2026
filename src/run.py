@@ -10,12 +10,11 @@ def run1():
     robot.plow(56)
     robot.fork_lift(56)
 
-
 def run2():
     # Drive out of starting area
     robot.drive(400,800)
 
-    # Configure for Surface Brushingrive from Left for the FIrst Run (30 points)
+    # Configure for Surface Brushing
     robot.fork_lift(46)
     robot.plow(91)
 
@@ -71,15 +70,6 @@ def run2():
     robot.fork_lift(56)
 
 def run3():
-    # Map Reveal
-    robot.drive(540, 1000)
-    robot.curve(300, -40)  #  Forwards left
-    robot.drive(-50)
-    robot.turn(38)
-    robot.drive(-670,1000)
-
-
-def run4():
     # Drop Pieces off at the Forum and Flag
     robot.plow(44)
     robot.drive(190,1000)
@@ -120,10 +110,9 @@ def run4():
     robot.drive(-127,1000)
     robot.raise_all(1000)
 
-
-def run5():
+def run4():
     # Drive to What's on Sale? (Wares)
-    robot.fork_lift(18)
+    robot.fork_lift(20)
     robot.drive(-237)
 
     # Raise Market Wares
@@ -138,7 +127,7 @@ def run5():
     # Ensure Raise Market Wares is Touching the mat
     robot.fork_lift(30)
     robot.turn(7)
-    robot.plow(95)
+    robot.plow(100)
 
     # Raise the roof on What's for Sale?
     robot.drive(174)
@@ -154,33 +143,26 @@ def run5():
 
     # Upright structure floor
     robot.turn(-17)
+    robot.turn(5)
+    robot.fork_lift(40)
 
     # Drive to Forge
-    robot.drive(30)
-    robot.fork_lift(5)
-    robot.turn(40)
-    robot.drive(93)
-    robot.turn(-9)
-    robot.fork_lift(35)
-
-    # Release Ore Blocks from Forge
-    robot.turn(10)
-    robot.turn(-20)
+    robot.drive(-80)
+    robot.turn(25)
+    robot.drive(70)
 
     # Heavy Lifting
-    robot.drive(-90)
     robot.plow(78)
-    robot.turn(45)
+    robot.turn(30)
     robot.plow(70)
 
     # Drive to Right Launch Area
-    robot.drive(75,1000)
-    robot.turn(-80)
-    robot.drive(600,1000)
+    robot.drive(25,1000)
+    robot.turn(-75)
+    robot.drive(700,1000)
     robot.raise_all(500)
 
-
-def run6():
+def run5():
     # Drive from Right Launch Area to Tip the Scales
     robot.plow(65, 50)
     robot.drive(-270,1000)
@@ -201,4 +183,4 @@ def run6():
     robot.plow(60)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5, run6)
+robot.menu(run1, run2, run3, run4, run5)
