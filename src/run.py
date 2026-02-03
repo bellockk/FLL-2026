@@ -112,6 +112,7 @@ def run3():
 
 def run4():
     # Drive to What's on Sale? (Wares)
+    robot.raise_all(1000)
     robot.fork_lift(20)
     robot.drive(-237)
 
@@ -152,6 +153,7 @@ def run4():
     robot.drive(70)
 
     # Heavy Lifting
+    robot.turn(15)
     robot.plow(78)
     robot.turn(30)
     robot.plow(70)
