@@ -112,7 +112,7 @@ def run3():
 
 def run4():
     # Drive to What's on Sale? (Wares)
-    robot.raise_all(1000)
+   # robot.raise_all(1000)
     robot.fork_lift(20)
     robot.drive(-237)
 
@@ -123,46 +123,62 @@ def run4():
     robot.fork_lift(10)
 
     # Raise the roof on What's for Sale
-    robot.drive(-105)
+    robot.drive(-115)
 
     # Ensure Raise Market Wares is Touching the mat
-    robot.fork_lift(30)
+    robot.fork_lift(40)
     robot.turn(7)
     robot.plow(100)
 
     # Raise the roof on What's for Sale?
-    robot.drive(174)
+    robot.drive(164)
 
     # Unhook the fork lift from What's for Sale's Roof
-    robot.drive(-70)
+    robot.drive(-10)
 
     # Drive to Who Lived Here
-    robot.plow(60)
-    robot.turn(55)
-    robot.fork_lift(22)
-    robot.drive(-308)
+    robot.plow(60,500)
+    robot.drive(40)
+    robot.turn(47)
+    robot.drive(-312,1000)
+    robot.fork_lift(5)
 
     # Upright structure floor
-    robot.turn(-17)
-    robot.turn(5)
+    robot.turn(18)
+    robot.drive(40)
     robot.fork_lift(40)
+    robot.drive(-80)
+    robot.plow(78)
+    robot.turn(35)
+    robot.raise_all(1000)
+    robot.drive(20)
+    robot.turn(-53)
+    robot.drive(-160)
+    robot.turn(-15)
+    robot.drive(100)
+    robot.turn(12)
+    robot.drive(500)
+   # robot.turn(-17)
+   # robot.drive(100)
+   # robot.turn(5)
+   # robot.fork_lift(40,1000)
 
     # Drive to Forge
-    robot.drive(-80)
-    robot.turn(25)
-    robot.drive(70)
+   # robot.drive(-80)
+   # robot.turn(25)
+   # robot.drive(70)
 
     # Heavy Lifting
-    robot.turn(15)
-    robot.plow(78)
-    robot.turn(30)
-    robot.plow(70)
+   # robot.turn(15)
+   # robot.plow(78)
+   # robot.turn(30)
+   # robot.plow(70)
 
     # Drive to Right Launch Area
-    robot.drive(25,1000)
-    robot.turn(-75)
-    robot.drive(700,1000)
-    robot.raise_all(500)
+  #  robot.drive(25,1000)
+  #  robot.turn(-75)
+  #  robot.drive(700,1000)
+  #  robot.raise_all(500)
 
 def run5():
     # Drive from Right Launch Area to Tip the Scales
