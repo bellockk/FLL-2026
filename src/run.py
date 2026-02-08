@@ -13,54 +13,60 @@ def run1():
 def run2():
     # Drive out of starting area
     robot.plow(50)
-    robot.drive(-10)
+   # robot.drive(-10)
     robot.drive(650,1000)
     robot.plow(65)
     robot.drive(195,1000)
 
     # Drive to Careful Recovery
     robot.turn(-89)
-    robot.drive(50,50)
+    robot.drive(55,50)
     robot.fork_lift(8)
 
     # Careful Recovery
-    robot.drive(-110,50)
+    robot.drive(-115,50)
     robot.fork_lift(19)
     robot.plow(30)
-    robot.drive(145,100)
-
-    # Remove Topsoil Section from Map Reveal
+    robot.drive(160,100)
     robot.fork_lift(47)
 
-    # Complete Mineshaft Explorer
-    robot.turn(12)
+    # Remove Topsoil Section from Map Reveal
+    robot.turn(6)
+    robot.plow(50)
+    robot.drive(-30)
+    robot.turn(25)
+    robot.plow(35)
+    robot.drive(55,50)
     robot.plow(85,50)
-    robot.drive(-100,500)
-    robot.turn(-40)
+
+    # Complete Mineshaft Explorer
+  #  robot.turn(12)
+
+    robot.drive(-90,500)
+    robot.turn(-63)
 
     # Drive to Statue Rebuild
-    robot.turn(65)
-    robot.fork_lift(33)
-    robot.plow(120)
-    robot.drive(-150,50)
-   # robot.plow(90)
-   # robot.turn(-5)
+    robot.turn(70)
+  #  robot.fork_lift(33)
+  #  robot.plow(120)
+  #  robot.drive(-150,50)
 
     # Statue Rebuild
-    robot.plow(51,500)
+  #  robot.plow(50.5,500)
 
     # Surface Brushing (Pass 2)
-    robot.drive(50)
-    robot.turn(-19)
-    robot.drive(110)
-    robot.turn(14)
-    robot.drive(170,50)
+  #  robot.drive(50)
+  #  robot.turn(-19)
+  #  robot.drive(130)
+  #  robot.turn(16)
+  #  robot.drive(165,50)
 
 
     # Drive Off Mat
-    robot.turn(68)
-  #  robot.raise_all(500)
-  #  robot.drive(-300,1000)
+   # robot.turn(10)
+   # robot.drive(-30,1000)
+   # robot.turn(62)
+   # robot.drive(-400)
 
 def run3():
     # Drop Pieces off at the Forum and Flag
