@@ -7,67 +7,60 @@ def run1():
     robot.initialize()
 
     # Prepare for Run 2
-    robot.plow(56)
+    robot.plow(47)
     robot.fork_lift(56)
 
 def run2():
     # Drive out of starting area
-    robot.drive(400,800)
-
-    # Configure for Surface Brushing
-    robot.fork_lift(46)
-    robot.plow(91)
-
-    # Surface Brushing (First Pass)
-    robot.drive(250,800)
+    robot.plow(50)
+    robot.drive(-10)
+    robot.drive(650,1000)
+    robot.plow(65)
+    robot.drive(195,1000)
 
     # Drive to Careful Recovery
-    robot.plow(60)
-    robot.drive(182)
     robot.turn(-89)
-    robot.drive(65)
+    robot.drive(50,50)
     robot.fork_lift(8)
 
     # Careful Recovery
-    robot.drive(-112,50)
-    robot.fork_lift(18)
-    robot.plow(47)
-    robot.drive(130,50)
+    robot.drive(-110,50)
+    robot.fork_lift(19)
+    robot.plow(30)
+    robot.drive(145,100)
 
     # Remove Topsoil Section from Map Reveal
     robot.fork_lift(47)
-    robot.plow(65)
 
     # Complete Mineshaft Explorer
-    robot.turn(10)
-    robot.drive(-90,500)
-    robot.plow(85)
-    robot.turn(-38)
+    robot.turn(12)
+    robot.plow(85,50)
+    robot.drive(-100,500)
+    robot.turn(-40)
 
     # Drive to Statue Rebuild
-    robot.turn(77)
-    robot.fork_lift(41)
-    robot.plow(95)
-    robot.drive(-115,500)
-    robot.turn(-17)
+    robot.turn(65)
+    robot.fork_lift(33)
+    robot.plow(120)
+    robot.drive(-150,50)
+   # robot.plow(90)
+   # robot.turn(-5)
 
     # Statue Rebuild
-    robot.fork_lift(48,1000)
+    robot.plow(51,500)
 
     # Surface Brushing (Pass 2)
-    robot.plow(70,1000)
-    robot.drive(115,800)
-    robot.turn(82)
-    robot.plow(95)
-    robot.fork_lift(50)
-    robot.drive(-360)
+    robot.drive(50)
+    robot.turn(-19)
+    robot.drive(110)
+    robot.turn(14)
+    robot.drive(170,50)
+
 
     # Drive Off Mat
-    robot.turn(-30)
-    robot.raise_all(500)
-    robot.drive(-510,1000)
-    robot.plow(56)
-    robot.fork_lift(56)
+    robot.turn(68)
+  #  robot.raise_all(500)
+  #  robot.drive(-300,1000)
 
 def run3():
     # Drop Pieces off at the Forum and Flag
