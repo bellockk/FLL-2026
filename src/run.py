@@ -12,11 +12,9 @@ def run1():
 
 def run2():
     # Drive out of starting area
-    robot.plow(50)
-   # robot.drive(-10)
-    robot.drive(650,1000)
     robot.plow(65)
-    robot.drive(195,1000)
+   # robot.drive(-10)
+    robot.drive(845,1000)
 
     # Drive to Careful Recovery
     robot.turn(-89)
@@ -28,45 +26,39 @@ def run2():
     robot.fork_lift(19)
     robot.plow(30)
     robot.drive(160,100)
-    robot.fork_lift(47)
+    robot.fork_lift(51)
 
     # Remove Topsoil Section from Map Reveal
-    robot.turn(6)
+    robot.turn(7)
     robot.plow(50)
     robot.drive(-30)
     robot.turn(25)
     robot.plow(35)
-    robot.drive(55,50)
+    robot.drive(57,50)
     robot.plow(85,50)
 
     # Complete Mineshaft Explorer
-  #  robot.turn(12)
-
-    robot.drive(-90,500)
-    robot.turn(-63)
+    robot.drive(-60)
+    robot.turn(-56)
 
     # Drive to Statue Rebuild
-    robot.turn(70)
-  #  robot.fork_lift(33)
-  #  robot.plow(120)
-  #  robot.drive(-150,50)
+    robot.turn(62)
+    robot.fork_lift(33)
+    robot.plow(99)
+    robot.drive(-170,50)
 
     # Statue Rebuild
-  #  robot.plow(50.5,500)
-
-    # Surface Brushing (Pass 2)
-  #  robot.drive(50)
-  #  robot.turn(-19)
-  #  robot.drive(130)
-  #  robot.turn(16)
-  #  robot.drive(165,50)
-
+    robot.fork_lift(60)
+    robot.plow(48)
 
     # Drive Off Mat
-   # robot.turn(10)
-   # robot.drive(-30,1000)
-   # robot.turn(62)
-   # robot.drive(-400)
+    robot.drive(150, 1000)
+    robot.turn(79)
+    robot.drive(-365, 1000)
+    robot.turn(-25)
+    robot.drive(-435, 1000)
+    robot.plow(60)
+    robot.fork_lift(60)
 
 def run3():
     # Drop Pieces off at the Forum and Flag
@@ -78,13 +70,17 @@ def run3():
     robot.plow(60)
 
     # Drive to Angler Artifacts
-    robot.drive(-100,1000)
-    robot.turn(-45)
-    robot.drive(-200,1000)
-    robot.turn(-90)
-    robot.drive(-240,1000)
-    robot.fork_lift(46)
+    robot.drive(-220,1000)
+    robot.turn(-113)
+    robot.drive(-190,1000)
+    robot.fork_lift(50)
     robot.plow(85)
+    robot.drive(107, 1000)
+    robot.drive(-105, 1000)
+    robot.fork_lift(77)
+    robot.turn(-20)
+    robot.drive(-200, 1000)
+    robot.fork_lift(47)
     robot.turn(20)
 
     # Raise Artifact above the ground layer
@@ -95,19 +91,11 @@ def run3():
     robot.drive(90,1000)
     robot.drive(-20,1000)
 
-    # Remove Sand from Salvage Operation
-    robot.turn(-20)
-    robot.drive(95)
-
-    # Raise the Ship
-    robot.turn(15)
-    robot.fork_lift(48)
-    robot.drive(140,1000)
-
     # Drive to Right Starting Area
-    robot.fork_lift(47)
-    robot.drive(-127,1000)
+    robot.turn(-20)
+    robot.drive(20)
     robot.raise_all(1000)
+    robot.drive(-300, 1000)
 
 def run4():
     # Drive to What's on Sale? (Wares)
