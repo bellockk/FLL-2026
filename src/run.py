@@ -13,7 +13,7 @@ def run1():
 def run2():
     # Drive out of starting area
     robot.plow(65)
-   # robot.drive(-10)
+    robot.drive(-10)
     robot.drive(845,1000)
 
     # Drive to Careful Recovery
@@ -63,6 +63,7 @@ def run2():
 def run3():
     # Drop Pieces off at the Forum and Flag
     robot.plow(44)
+    robot.drive(-10)
     robot.drive(190,1000)
     robot.turn(44)
     robot.drive(235,500)
