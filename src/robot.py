@@ -282,12 +282,18 @@ class Robot():
             self._motors['back'].run_until_stalled(200, then=Stop.HOLD),
             self._motors['front'].run_until_stalled(200, then=Stop.HOLD))
         backoff = 5
+
+        # Determine limits for back motor
         await self._motors['back'].run_until_stalled(200, then=Stop.HOLD)
         self._back_motor_lower = self._motors['back'].angle() - backoff
         await self._motors['back'].run_until_stalled(-200, then=Stop.HOLD)
         self._back_motor_upper = self._motors['back'].angle() + backoff
         self._back_motor_up = self._back_motor_upper + 170
-        await self._motors['back'].run_target(200, self._back_motor_up)
+
+        # Move the motor out of the way
+        await self._motors['back'].run_target(200, self._back_motor_lower)
+
+        # Determine limits for front motor
         await self._motors['front'].run_until_stalled(200, then=Stop.HOLD)
         self._front_motor_lower = self._motors['front'].angle() - backoff
         await self._motors['front'].run_until_stalled(-200, then=Stop.HOLD)
