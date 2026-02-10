@@ -273,7 +273,7 @@ class Robot():
     @robot_api
     async def initialize(self):
         """
-        Initialize robot.
+        Initialize robot.s
 
         This determines the min/max rotation of the front and back motors.  This
         should be run once then not again until the motor gears have slipped.
@@ -299,6 +299,8 @@ class Robot():
         await self._motors['front'].run_until_stalled(-200, then=Stop.HOLD)
         self._front_motor_upper = self._motors['front'].angle() + backoff
         self._front_motor_up = self._front_motor_upper + 160
+
+        # Move motors to raised position
         await self._raise_all()
         self._save_persistent_data()
 
