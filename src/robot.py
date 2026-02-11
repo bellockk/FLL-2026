@@ -108,53 +108,53 @@ class Robot():
 
     def lower_all(self, speed=500):
         """
-        Lower both the fork lift and plow.
+        Lower both the fork lift and front_lift.
 
         Args:
-            speed (int, optional): Speed at which to move both the fork lift and plow. Defaults to 500.
+            speed (int, optional): Speed at which to move both the fork lift and front_lift. Defaults to 500.
         """
         self._queue.append((self._lower_all, (speed,), {}))
 
-    def lower_fork_lift_stow_plow(self, speed=500):
+    def lower_back_lift_stow_front_lift(self, speed=500):
         """
-        Lower the fork lift and stow the plow.
+        Lower the fork lift and stow the front_lift.
 
         Args:
-            speed (int, optional): Speed at which to move both the fork lift and plow. Defaults to 500.
+            speed (int, optional): Speed at which to move both the fork lift and front_lift. Defaults to 500.
         """
-        self._queue.append((self._lower_fork_lift_stow_plow, (speed,), {}))
+        self._queue.append((self._lower_back_lift_stow_front_lift, (speed,), {}))
 
-    def lower_plow_stow_fork_lift(self, speed=500):
+    def lower_front_lift_stow_back_lift(self, speed=500):
         """
-        Lower the plow and stow the fork lift.
+        Lower the front_lift and stow the fork lift.
 
         Args:
-            speed (int, optional): Speed at which to move both the fork lift and plow. Defaults to 500.
+            speed (int, optional): Speed at which to move both the fork lift and front_lift. Defaults to 500.
         """
-        self._queue.append((self._lower_plow_stow_fork_lift, (speed,), {}))
+        self._queue.append((self._lower_front_lift_stow_back_lift, (speed,), {}))
 
     def raise_all(self, speed=500):
         """
-        Raise both the fork lift and plow.
+        Raise both the fork lift and front_lift.
 
         Args:
-            speed (int, optional): Speed at which to move both the fork lift and plow. Defaults to 500.
+            speed (int, optional): Speed at which to move both the fork lift and front_lift. Defaults to 500.
         """
         self._queue.append((self._raise_all, (speed,), {}))
 
     def stow_all(self, speed=500):
         self._queue.append((self._stow_all, (speed,), {}))
 
-    def plow(self, percent: float, speed: float=120):
+    def front_lift(self, percent: float, speed: float=120):
         """
-        Set the plow height.
+        Set the front_lift height.
 
         This takes a percent value that will be gated to between 0 and 100.  0
         corresponds to completely lowered, and 100 corresponds to fully stowed.
 
         Args:
-            percent (float, deg): The percent position to move the plow to.
-            speed (float, mm/s): The speed to move the plow at. Defaults to 120.
+            percent (float, deg): The percent position to move the front_lift to.
+            speed (float, mm/s): The speed to move the front_lift at. Defaults to 120.
         """
         # Gate to between 0 and 100
         percent = min(max(percent, 0), 100)
@@ -164,34 +164,34 @@ class Robot():
             self._front_motor_upper - self._front_motor_lower) * percent * .01)
         self._queue.append((self._motors['front'].run_target, (speed, target,), {}))
 
-    def plow_stow(self, speed=500):
+    def front_lift_stow(self, speed=500):
         """
-        Stow the plow.
+        Stow the front_lift.
 
         Args:
-            speed (int, optional): The speed at which to move the plow. Defaults to 500.
+            speed (int, optional): The speed at which to move the front_lift. Defaults to 500.
         """
         self._queue.append((self._motors['front'].run_target, (speed, self._front_motor_upper), {}))
 
-    def plow_up(self, speed=500):
+    def front_lift_up(self, speed=500):
         """
-        Raise the plow.
+        Raise the front_lift.
 
         Args:
-            speed (int, optional): The speed at which to move the plow. Defaults to 500.
+            speed (int, optional): The speed at which to move the front_lift. Defaults to 500.
         """
         self._queue.append((self._motors['front'].run_target, (speed, self._front_motor_up), {}))
 
-    def plow_lower(self, speed=500):
+    def front_lift_lower(self, speed=500):
         """
-        Lower the plow.
+        Lower the front_lift.
 
         Args:
-            speed (int, optional): The speed at which to move the plow. Defaults to 500.
+            speed (int, optional): The speed at which to move the front_lift. Defaults to 500.
         """
         self._queue.append((self._motors['front'].run_target, (speed, self._front_motor_lower), {}))
 
-    def fork_lift(self, percent: float, speed: float=120):
+    def back_lift(self, percent: float, speed: float=120):
         """
         Set the fork lift height.
 
@@ -210,7 +210,7 @@ class Robot():
             self._back_motor_upper - self._back_motor_lower) * percent * .01)
         self._queue.append((self._motors['back'].run_target, (speed, target,), {}))
 
-    def fork_lift_stow(self, speed=500):
+    def back_lift_stow(self, speed=500):
         """
         Stow the fork lift.
 
@@ -219,7 +219,7 @@ class Robot():
         """
         self._queue.append((self._motors['back'].run_target, (speed, self._back_motor_upper), {}))
 
-    def fork_lift_up(self, speed=500):
+    def back_lift_up(self, speed=500):
         """
         Raise the fork lift.
 
@@ -228,7 +228,7 @@ class Robot():
         """
         self._queue.append((self._motors['back'].run_target, (speed, self._back_motor_up), {}))
 
-    def fork_lift_lower(self, speed=500):
+    def back_lift_lower(self, speed=500):
         """
         Lower the fork lift.
 
@@ -405,13 +405,13 @@ class Robot():
             self._motors['back'].run_target(speed, self._back_motor_lower),
             self._motors['front'].run_target(speed, self._front_motor_lower))
 
-    async def _lower_plow_stow_fork_lift(self, speed=500):
+    async def _lower_front_lift_stow_back_lift(self, speed=500):
         await self._raise_all()
         await multitask(
             self._motors['back'].run_target(speed, self._back_motor_upper),
             self._motors['front'].run_target(speed, self._front_motor_lower))
 
-    async def _lower_fork_lift_stow_plow(self, speed=500):
+    async def _lower_back_lift_stow_front_lift(self, speed=500):
         await self._raise_all()
         await multitask(
             self._motors['back'].run_target(speed, self._back_motor_lower),
