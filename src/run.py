@@ -179,7 +179,7 @@ def run5():
     robot.front_lift(65, 50)
     robot.drive(-270,1000)
     robot.turn(39)
-    robot.drive(-166,1000)
+    robot.drive(-160,1000)
     robot.back_lift(5)
 
     # Remove the Scale Pan
@@ -189,10 +189,11 @@ def run5():
     robot.drive(-480,1000)
     robot.back_lift(55)
     robot.turn(-40)
-    robot.drive(-350)
-    robot.turn(105)
-    robot.front_lift(45, 100)
-    robot.front_lift(60)
+    robot.drive(-300)
+    robot.turn(80)
+    robot.drive(100)
+    robot.front_lift(45, 50)
+    robot.front_lift(60,50)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5)
