@@ -14,31 +14,31 @@ def run2():
     # Drive out of starting area
     robot.front_lift(60)
     robot.drive(-10)
-    robot.drive(800,1000)
+    robot.drive(810,1000)
 
     # Drive to Careful Recovery
     robot.turn(-49)
-    robot.drive(55)
+    robot.drive(75)
     robot.back_lift(8)
-    robot.turn(-40)
+    robot.turn(-42)
 
     # Careful Recovery & Complete Mineshaft Explorer
-    robot.drive(-120,40)
+    robot.drive(-95,40)
     robot.front_lift(50)
-    robot.back_lift(19,50)
-    robot.drive(103,40)
-    robot.back_lift(50,60)
+    robot.back_lift(21,50)
+    robot.drive(135,40)
+    robot.back_lift(50,50)
     robot.back_lift(33)
-    robot.drive(60,50)
+    robot.drive(50,50)
 
     # Remove Topsoil Section from Map Reveal
-    robot.turn(8)
+    robot.turn(10)
     robot.front_lift(57)
     robot.drive(-30)
     robot.turn(29)
     robot.front_lift(45)
     robot.drive(40,50)
-    robot.front_lift(85,50)
+    robot.front_lift(90,50)
 
     # Drive to Statue Rebuild
     robot.drive(-230,50)
@@ -49,11 +49,12 @@ def run2():
 
     # Brush Pick Up & Drive Off Mat
     robot.drive(120)
-    robot.turn(110)
+    robot.turn(90)
     robot.drive(-110, 1000)
-    robot.turn(-47)
+    robot.turn(-17)
+    robot.drive(-8)
     robot.front_lift(40,50)
-    robot.drive(-435, 1000)
+    robot.drive(-775, 1000)
     robot.front_lift(60)
     robot.back_lift(60)
 
@@ -86,6 +87,14 @@ def run3():
     robot.drive(-70)
     robot.drive(70,1000)
     robot.drive(-70)
+    robot.drive(70,1000)
+    robot.drive(-70)
+    robot.drive(70,1000)
+    robot.drive(-70)
+    robot.drive(70,1000)
+    robot.drive(-70)
+    robot.drive(70,1000)
+    robot.drive(-70)
     robot.drive(90,1000)
     robot.drive(-20,1000)
 
@@ -93,11 +102,11 @@ def run3():
     robot.turn(-20)
     robot.drive(20)
     robot.raise_all(1000)
-    robot.drive(-300, 1000)
+    robot.drive(-1300, 1000)
 
 def run4():
     # Drive to What's on Sale? (Wares)
-   # robot.raise_all(1000)
+    robot.raise_all(1000)
     robot.back_lift(20)
     robot.drive(-237)
 
@@ -108,7 +117,7 @@ def run4():
     robot.back_lift(10)
 
     # Raise the roof on What's for Sale
-    robot.drive(-115)
+    robot.drive(-93)
 
     # Ensure Raise Market Wares is Touching the mat
     robot.back_lift(40)
@@ -119,7 +128,7 @@ def run4():
     robot.drive(164)
 
     # Unhook the fork lift from What's for Sale's Roof
-    robot.drive(-10)
+    robot.drive(-25)
 
     # Drive to Who Lived Here
     robot.front_lift(60,500)
@@ -142,28 +151,28 @@ def run4():
     robot.turn(-15)
     robot.drive(100)
     robot.turn(12)
-    robot.drive(500)
-   # robot.turn(-17)
-   # robot.drive(100)
-   # robot.turn(5)
-   # robot.back_lift(40,1000)
+    robot.drive(700)
+    robot.turn(-17)
+    robot.drive(100)
+    robot.turn(5)
+    robot.back_lift(40,1000)
 
     # Drive to Forge
-   # robot.drive(-80)
-   # robot.turn(25)
-   # robot.drive(70)
+    robot.drive(-80)
+    robot.turn(25)
+    robot.drive(70)
 
     # Heavy Lifting
-   # robot.turn(15)
-   # robot.front_lift(78)
-   # robot.turn(30)
-   # robot.front_lift(70)
+    robot.turn(15)
+    robot.front_lift(78)
+    robot.turn(30)
+    robot.front_lift(70)
 
     # Drive to Right Launch Area
-  #  robot.drive(25,1000)
-  #  robot.turn(-75)
-  #  robot.drive(700,1000)
-  #  robot.raise_all(500)
+    robot.drive(25,1000)
+    robot.turn(-75)
+    robot.drive(700,1000)
+    robot.raise_all(500)
 
 def run5():
     # Drive from Right Launch Area to Tip the Scales
@@ -178,10 +187,10 @@ def run5():
 
     # Drive to Forum
     robot.drive(-480,1000)
-    robot.back_lift(40)
-    robot.turn(-45)
-    robot.drive(-400)
-    robot.turn(50)
+    robot.back_lift(55)
+    robot.turn(-40)
+    robot.drive(-350)
+    robot.turn(105)
     robot.front_lift(45, 100)
     robot.front_lift(60)
 
