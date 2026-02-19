@@ -146,7 +146,7 @@ def run4():
     robot.back_lift(55)
     robot.front_lift(78)
     robot.turn(23)
-    robot.raise_all(1000)
+  #  robot.raise_all(1000)
     robot.front_lift(50)
     robot.turn(-46)
 
@@ -160,6 +160,9 @@ def run4():
     robot.drive(700)
 
 def run5():
+  robot.raise_all(1000)
+
+def run6():
     # Drive from Right Launch Area to Tip the Scales
     robot.raise_all(500)
     robot.front_lift(65, 50)
@@ -182,4 +185,4 @@ def run5():
     robot.front_lift(60,50)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
-robot.menu(run1, run2, run3, run4, run5)
+robot.menu(run1, run2, run3, run4, run5, run6)
