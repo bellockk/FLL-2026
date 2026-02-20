@@ -25,7 +25,7 @@ def run2():
     # Careful Recovery & Complete Mineshaft Explorer
     robot.drive(-115,40)
     robot.front_lift(50)
-    robot.back_lift(21,50)
+    robot.back_lift(22,50)
     robot.drive(155,40)
     robot.back_lift(55,100)
     robot.back_lift(33)
@@ -43,7 +43,7 @@ def run2():
     robot.drive(-240,50)
 
     # Statue Rebuild
-    robot.back_lift(60,1000)
+    robot.back_lift(65,1000)
     robot.front_lift(70,1000)
 
     # Brush Pick Up & Drive Off Mat
@@ -55,7 +55,7 @@ def run2():
     robot.front_lift(40,50)
     robot.drive(-143, 1000)
     robot.turn(-14)
-    robot.drive(-540,1000)
+    robot.drive(-530,1000)
     robot.front_lift(60)
     robot.back_lift(60)
 
@@ -109,7 +109,7 @@ def run4():
     # Drive to What's on Sale? (Wares)
     robot.raise_all(1000)
    # robot.front_lift(50)
-    robot.back_lift(20)
+    robot.back_lift(18)
     robot.drive(-237)
 
     # Raise Market Wares
@@ -135,28 +135,29 @@ def run4():
     # Drive to Forge
     robot.front_lift(60,500)
     robot.drive(40)
-    robot.turn(45)
-    robot.drive(-335,1000)
-    robot.back_lift(5)
+    robot.turn(43)
+    robot.drive(-350,1000)
+   # robot.back_lift(5)
 
     # Heavy Lifting
-    robot.turn(19)
-    robot.drive(40)
-    robot.drive(-25)
+   # robot.turn(19)
+   # robot.drive(40)
+   # robot.drive(-25)
     robot.back_lift(55)
-    robot.front_lift(78)
-    robot.turn(23)
+    robot.front_lift(85)
+    robot.turn(52)
   #  robot.raise_all(1000)
     robot.front_lift(50,1000)
     robot.turn(-46)
 
     # Drive to Who Lived Here
-    robot.drive(-185)
-    robot.turn(-25)
-    robot.drive(20)
+    robot.drive(-170,50)
+    robot.turn(8)
+    #robot.drive(20)
 
     # Drive to Right Launch Area
-    robot.turn(25)
+    robot.turn(-35)
+    robot.turn(23)
     robot.drive(700)
 
 def run5():
@@ -172,7 +173,7 @@ def run6():
     robot.raise_all(500)
     robot.front_lift(65, 50)
     robot.drive(-270,1000)
-    robot.turn(39)
+    robot.turn(36)
     robot.drive(-160,1000)
     robot.back_lift(5)
 
