@@ -25,7 +25,7 @@ def run2():
     # Careful Recovery & Complete Mineshaft Explorer
     robot.drive(-115,40)
     robot.front_lift(50)
-    robot.back_lift(28,50)
+    robot.back_lift(21,50)
     robot.drive(155,40)
     robot.back_lift(55,100)
     robot.back_lift(33)
@@ -48,8 +48,8 @@ def run2():
 
     # Brush Pick Up & Drive Off Mat
     robot.drive(140)
-    robot.turn(87)
-    robot.drive(-110, 1000)
+    robot.turn(86)
+    robot.drive(-106, 1000)
     robot.turn(-19)
     robot.drive(-100)
     robot.front_lift(40,50)
@@ -73,14 +73,14 @@ def run3():
     robot.drive(-208,1000)
     robot.turn(-111)
     robot.drive(-140,1000)
-    robot.back_lift(56)
+    robot.back_lift(44)
     robot.front_lift(85)
     robot.drive(73, 1000)
     robot.drive(-90, 1000)
-    robot.back_lift(77)
+    robot.back_lift(75)
     robot.turn(-20)
     robot.drive(-190, 1000)
-    robot.back_lift(55)
+    robot.back_lift(50)
     robot.turn(20)
 
     # Raise Artifact above the ground layer
@@ -136,7 +136,7 @@ def run4():
     robot.front_lift(60,500)
     robot.drive(40)
     robot.turn(45)
-    robot.drive(-330,1000)
+    robot.drive(-335,1000)
     robot.back_lift(5)
 
     # Heavy Lifting
@@ -147,11 +147,11 @@ def run4():
     robot.front_lift(78)
     robot.turn(23)
   #  robot.raise_all(1000)
-    robot.front_lift(50)
+    robot.front_lift(50,1000)
     robot.turn(-46)
 
     # Drive to Who Lived Here
-    robot.drive(-180)
+    robot.drive(-185)
     robot.turn(-25)
     robot.drive(20)
 
@@ -160,7 +160,12 @@ def run4():
     robot.drive(700)
 
 def run5():
-  robot.raise_all(1000)
+  robot.front_lift(0, 1000)
+  robot.front_lift(60,1000)
+  robot.front_lift(0,1000)
+  robot.front_lift(60,1000)
+  robot.front_lift(0,1000)
+  robot.front_lift(65,1000)
 
 def run6():
     # Drive from Right Launch Area to Tip the Scales
@@ -181,8 +186,9 @@ def run6():
     robot.drive(-300)
     robot.turn(80)
     robot.drive(100)
-    robot.front_lift(45, 50)
+    robot.front_lift(35, 40)
     robot.front_lift(60,50)
+    robot.drive(-40)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5, run6)
