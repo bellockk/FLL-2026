@@ -40,21 +40,72 @@
 
 \begin{document}
 
+% Remove Page Number
+\thispagestyle{empty}
+
 \begin{tikzpicture}[remember picture,overlay]
-  \node[inner sep=0pt] at (current page.center)
-    {\includegraphics[angle=90,width=\paperwidth,height=\paperheight,keepaspectratio]{top}};
+	\node[inner sep=0pt] at ([yshift=2cm] current page.center)
+    {\includegraphics[width=.6\paperwidth,keepaspectratio]{top}};
 \end{tikzpicture}
 
 \begin{tikzpicture}[remember picture,overlay]
-  \node[anchor=north west, inner sep=0pt, outer sep=0pt]
-    at ([xshift=2.5cm, yshift=-4cm] current page.north west)
+	\node[inner sep=0pt] at ([yshift=-12cm] current page.center)
+    {\includegraphics[width=.3\paperwidth,keepaspectratio]{1000002230}};
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[inner sep=0pt] at ([xshift=-7cm, yshift=-12cm] current page.center)
+    {\includegraphics[width=.3\paperwidth,keepaspectratio]{1000002228}};
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+	\node[inner sep=0pt] at ([xshift=7cm, yshift=-12cm] current page.center)
+    {\includegraphics[width=.3\paperwidth,keepaspectratio]{1000002229}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+	\draw[->, line width=4mm] ([yshift=11cm] current page.center) -- ([yshift=14cm] current page.center);
+	\draw[->, line width=4mm] ([yshift=-7cm] current page.center) -- ([yshift=-10cm] current page.center);
+	\draw[->, line width=4mm] ([yshift=11cm, xshift=-4cm] current page.center) to[out=120, in=120] ([yshift=6cm, xshift=-7cm] current page.center);
+	\draw[->, line width=4mm] ([yshift=11cm, xshift=4cm] current page.center) to[out=60, in=90] ([yshift=6cm, xshift=7cm] current page.center);
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=12cm] current page.center)
     {%
-      \begin{pythoncode}{Factorial function}
+      \begin{pythoncode}{}
 robot.drive(+DISTANCE)
       \end{pythoncode}
     };
 \end{tikzpicture}
 
-% Add your other boxes similarly...
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=-8cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.drive(-DISTANCE)
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=9cm, xshift=-7cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.turn(-ANGLE)
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=9cm, xshift=7cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.turn(+ANGLE)
+      \end{pythoncode}
+    };
+\end{tikzpicture}
 
 \end{document}
