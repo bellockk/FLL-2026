@@ -180,7 +180,7 @@ def run6():
     robot.back_lift(55)
     robot.turn(95)
     robot.drive(235,1000)
-    robot.front_lift(35,100)
+    robot.front_lift(35,200)
     robot.drive(-120,1000)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
