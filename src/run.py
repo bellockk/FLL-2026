@@ -54,7 +54,7 @@ def run2():
     robot.drive(-100)
     robot.front_lift(40,50)
     robot.drive(-143, 1000)
-    robot.turn(-14)
+    robot.turn(-15)
     robot.drive(-530,1000)
     robot.front_lift(60)
     robot.back_lift(60)
@@ -71,15 +71,15 @@ def run3():
 
     # Drive to Angler Artifacts
     robot.drive(-208,1000)
-    robot.turn(-111)
-    robot.drive(-140,1000)
-    robot.back_lift(44)
+    robot.turn(-112)
+    robot.drive(-144,1000)
+    robot.back_lift(49)
     robot.front_lift(85)
-    robot.drive(73, 1000)
-    robot.drive(-90, 1000)
+    robot.drive(71, 1000)
+    robot.drive(-100, 1000)
     robot.back_lift(75)
     robot.turn(-20)
-    robot.drive(-190, 1000)
+    robot.drive(-170, 1000)
     robot.back_lift(50)
     robot.turn(20)
 
@@ -108,8 +108,8 @@ def run3():
 def run4():
     # Drive to What's on Sale? (Wares)
     robot.raise_all(1000)
-   # robot.front_lift(50)
-    robot.back_lift(18)
+    robot.front_lift(50)
+    robot.back_lift(19)
     robot.drive(-237)
 
     # Raise Market Wares
@@ -135,30 +135,24 @@ def run4():
     # Drive to Forge
     robot.front_lift(60,500)
     robot.drive(40)
-    robot.turn(43)
+    robot.turn(42)
     robot.drive(-350,1000)
-   # robot.back_lift(5)
 
     # Heavy Lifting
-   # robot.turn(19)
-   # robot.drive(40)
-   # robot.drive(-25)
     robot.back_lift(55)
     robot.front_lift(85)
     robot.turn(52)
-  #  robot.raise_all(1000)
     robot.front_lift(50,1000)
-    robot.turn(-46)
+    robot.turn(-48)
 
     # Drive to Who Lived Here
-    robot.drive(-170,50)
-    robot.turn(8)
-    #robot.drive(20)
+    robot.drive(-168,50)
 
     # Drive to Right Launch Area
-    robot.turn(-35)
-    robot.turn(23)
-    robot.drive(700)
+    robot.turn(-27)
+    robot.turn(35)
+    robot.drive(760,1000)
+    robot.turn(50)
 
 def run5():
   robot.front_lift(0, 1000)
@@ -173,23 +167,21 @@ def run6():
     robot.raise_all(500)
     robot.front_lift(65, 50)
     robot.drive(-270,1000)
-    robot.turn(36)
+    robot.turn(37)
     robot.drive(-160,1000)
     robot.back_lift(5)
 
     # Remove the Scale Pan
     robot.turn(-22)
+    robot.turn(5)
 
     # Drive to Forum
-    robot.drive(-480,1000)
+    robot.drive(-465,1000)
     robot.back_lift(55)
-    robot.turn(-40)
-    robot.drive(-300)
-    robot.turn(80)
-    robot.drive(100)
-    robot.front_lift(35, 40)
-    robot.front_lift(60,50)
-    robot.drive(-40)
+    robot.turn(95)
+    robot.drive(235,1000)
+    robot.front_lift(35,100)
+    robot.drive(-120,1000)
 
 # !! DO NOT REMOVE THE FOLLOWING LINES !!
 robot.menu(run1, run2, run3, run4, run5, run6)
