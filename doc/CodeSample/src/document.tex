@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+
+% ====================== LISTINGS STYLE ======================
+\lstdefinestyle{mycode}{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!80!black}\bfseries,
+    commentstyle=\color{green!60!black}\itshape,
+    stringstyle=\color{red!70!black},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=3pt,
+    frame=single,
+    framesep=1pt,
+    backgroundcolor=\color{gray!5},
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt,
+}
+
+% ====================== YOUR CUSTOM LISTING (100% safe) ======================
+\newtcblisting{mycodelisting}[2][]{
+    listing only,
+    listing options={style=mycode},
+    title={#2},
+    colback=gray!8,
+    colframe=teal!70!black,
+    coltitle=white,
+    fonttitle=\bfseries,
+    boxrule=0.8pt,
+    arc=3pt,
+    top=8pt,
+    bottom=8pt,
+    left=10pt,
+    right=10pt,
+    #1
+}
+
+% ====================== DOCUMENT ======================
+\begin{document}
+
+
+% Remove Page Number
+\thispagestyle{empty}
+
+\begin{center}
+	\Huge Code Sample
+\end{center}
+
+\hfill
+
+\begin{mycodelisting}{run.py}
+def run2():
+    # Drive out of starting area
+    robot.front_lift(60)
+    robot.drive(-10)
+    robot.drive(810,1000)
+
+    # Drive to Careful Recovery
+    robot.turn(-49)
+    robot.drive(60)
+    robot.back_lift(13)
+    robot.turn(-45)
+
+    # Careful Recovery & Complete Mineshaft Explorer
+    robot.drive(-115,40)
+    robot.front_lift(50)
+    robot.back_lift(22,50)
+    robot.drive(155,40)
+    robot.back_lift(55,100)
+    robot.back_lift(33)
+
+    # Remove Topsoil Section from Map Reveal
+    robot.turn(16)
+    robot.front_lift(57)
+    robot.drive(-30)
+    robot.turn(29)
+    robot.front_lift(45)
+    robot.drive(40,50)
+    robot.front_lift(95,50)
+
+    # Drive to Statue Rebuild
+    robot.drive(-240,50)
+
+    # Statue Rebuild
+    robot.back_lift(65,1000)
+    robot.front_lift(70,1000)
+
+    # Brush Pick Up & Drive Off Mat
+    robot.drive(140)
+    robot.turn(86)
+    robot.drive(-106, 1000)
+    robot.turn(-19)
+    robot.drive(-100)
+    robot.front_lift(40,50)
+    robot.drive(-143, 1000)
+    robot.turn(-14)
+    robot.drive(-530,1000)
+    robot.front_lift(60)
+    robot.back_lift(60)
+\end{mycodelisting}
+
+\end{document}

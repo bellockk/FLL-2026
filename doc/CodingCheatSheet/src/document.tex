@@ -14,7 +14,7 @@
   keywordstyle      = \color{blue!80!black}\bfseries,
   stringstyle       = \color{green!60!black},
   commentstyle      = \color{gray}\itshape,
-  numbers           = left,
+  %numbers           = left,
   numberstyle       = \tiny\color{gray!60},
   stepnumber        = 1,
   numbersep         = 8pt,
@@ -44,8 +44,8 @@
 \thispagestyle{empty}
 
 \begin{tikzpicture}[remember picture,overlay]
-	\node[inner sep=0pt] at ([yshift=2cm] current page.center)
-    {\includegraphics[width=.6\paperwidth,keepaspectratio]{top}};
+	\node[inner sep=0pt] at ([yshift=3.5cm] current page.center)
+    {\includegraphics[width=.5\paperwidth,keepaspectratio]{top}};
 \end{tikzpicture}
 
 \begin{tikzpicture}[remember picture,overlay]
@@ -57,15 +57,35 @@
     {\includegraphics[width=.3\paperwidth,keepaspectratio]{1000002228}};
 \end{tikzpicture}
 \begin{tikzpicture}[remember picture,overlay]
-	\node[inner sep=0pt] at ([xshift=7cm, yshift=-12cm] current page.center)
+	\node[inner sep=0pt] at ([xshift=7cm, yshift=-12.25cm] current page.center)
     {\includegraphics[width=.3\paperwidth,keepaspectratio]{1000002229}};
 \end{tikzpicture}
 
 \begin{tikzpicture}[remember picture,overlay]
 	\draw[->, line width=4mm] ([yshift=11cm] current page.center) -- ([yshift=14cm] current page.center);
-	\draw[->, line width=4mm] ([yshift=-7cm] current page.center) -- ([yshift=-10cm] current page.center);
+	\draw[->, line width=4mm] ([yshift=-4cm] current page.center) -- ([yshift=-7cm] current page.center);
 	\draw[->, line width=4mm] ([yshift=11cm, xshift=-4cm] current page.center) to[out=120, in=120] ([yshift=6cm, xshift=-7cm] current page.center);
 	\draw[->, line width=4mm] ([yshift=11cm, xshift=4cm] current page.center) to[out=60, in=90] ([yshift=6cm, xshift=7cm] current page.center);
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=8cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.front_lift(ANGLE)
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=-1cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.back_lift(ANGLE)
+      \end{pythoncode}
+    };
 \end{tikzpicture}
 
 \begin{tikzpicture}[remember picture,overlay]
@@ -80,7 +100,7 @@ robot.drive(+DISTANCE)
 
 \begin{tikzpicture}[remember picture,overlay]
   \node[anchor=center, inner sep=0pt, outer sep=0pt]
-    at ([yshift=-8cm] current page.center)
+    at ([yshift=-5cm] current page.center)
     {%
       \begin{pythoncode}{}
 robot.drive(-DISTANCE)
@@ -104,6 +124,45 @@ robot.turn(-ANGLE)
     {%
       \begin{pythoncode}{}
 robot.turn(+ANGLE)
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=-9.5cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.front_lift(50)
+robot.back_lift(50)
+# or
+robot.raise_all()
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=-9.5cm, xshift=7cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.front_lift(0)
+robot.back_lift(0)
+# or
+robot.lower_all()
+      \end{pythoncode}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=center, inner sep=0pt, outer sep=0pt]
+    at ([yshift=-9.5cm, xshift=-7cm] current page.center)
+    {%
+      \begin{pythoncode}{}
+robot.front_lift(100)
+robot.back_lift(100)
+# or
+robot.stow_all()
       \end{pythoncode}
     };
 \end{tikzpicture}

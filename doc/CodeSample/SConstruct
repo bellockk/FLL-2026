@@ -1,0 +1,15 @@
+import SCons
+
+# Create Build Environment
+temp_env = DefaultEnvironment(tools=[])
+env = Environment(
+    ENV=temp_env['ENV'])
+env.Append(
+    PDFLATEXFLAGS=['-halt-on-error', '-shell-escape', '-synctex=1'],
+    TEXINPUTS=[Dir('media').abspath])
+
+# Build
+Export('env')
+doc = SConscript('src/SConscript', variant_dir='build', duplicate=True)
+install = env.InstallAs('dist/CodeSample.pdf', doc)
+Default(install)
